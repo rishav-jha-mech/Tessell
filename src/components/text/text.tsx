@@ -8,7 +8,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>(
     ref
   ) => {
     return (
-      <S.Text
+      <S.TextBase
         ref={ref}
         $renderAs={$renderAs}
         $color={$color}
@@ -16,7 +16,7 @@ export const Text = React.forwardRef<HTMLSpanElement, TextProps>(
         {...restProps}
       >
         {children}
-      </S.Text>
+      </S.TextBase>
     );
   }
 );

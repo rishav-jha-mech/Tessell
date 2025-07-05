@@ -1,6 +1,10 @@
-import { fontWeights } from "./font-weights";
+const fontWeights = {
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+};
 
-export const Typography = {
+export const ThemeText = {
   headingLg: {
     fontFamily: "'Inter', sans-serif",
     fontWeight: fontWeights.semibold,
@@ -59,4 +63,4 @@ export const Typography = {
   },
 };
 
-export type TextVariant = keyof typeof Typography;
+export type TextVariant = keyof typeof ThemeText;

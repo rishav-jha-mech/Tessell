@@ -1,12 +1,12 @@
 import type { Preview } from "@storybook/react";
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../src/styles/theme"; // 👉 adjust path
+import { AppDefaultTheme } from "../src/theme/theme"; // 👉 adjust path
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={AppDefaultTheme}>
         <Story />
       </ThemeProvider>
     ),

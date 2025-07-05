@@ -1,5 +1,5 @@
-import type { ColorKeys } from "../../tokens/colors/colors";
-import type { TextVariant } from "../../tokens/text/typography";
+import type { ColorKeys } from "../../theme/theme-colors/colors";
+import type { TextVariant } from "../../theme/theme-text/theme-text";
 
 export type TextProps = {
   children: React.ReactNode;

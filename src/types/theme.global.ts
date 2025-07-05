@@ -1,9 +1,6 @@
-import type { Colors } from "../tokens/colors/colors";
-import type { Typography } from "../tokens/text/typography";
+import type { AppTheme } from "../theme/theme";
 
 declare module "styled-components" {
-  export interface DefaultTheme {
-    typography: typeof Typography;
-    colors: typeof Colors;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  export interface DefaultTheme extends AppTheme {}
 }

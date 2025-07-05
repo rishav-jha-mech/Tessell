@@ -10,4 +10,5 @@ export const SurfaceColors = {
   "surface-700": "#343F56",
   "surface-800": "#222C3F",
   "surface-900": "#13161E",
+  "surface-secondary": "#EEF1F6",
 };

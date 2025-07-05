@@ -3,9 +3,9 @@ import type { TextProps } from "./text-types";
 
 type StyledTextProps = Omit<TextProps, "children">;
 
-export const Text = styled.span<StyledTextProps>`
+export const TextBase = styled.span<StyledTextProps>`
   ${({ theme, $renderAs, $color, $displayAs }) => {
-    const variant = theme.typography[$renderAs];
+    const variant = theme.text[$renderAs];
     return css`
       font-family: ${variant.fontFamily};
       font-size: ${variant.fontSize};

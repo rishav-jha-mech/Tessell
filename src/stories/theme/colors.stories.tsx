@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Text } from "../../components/text/text";
-import { Colors } from "../../tokens/colors/colors";
+import { useTheme } from "styled-components";
 
 const meta = {
   title: "Theme/Colors",
@@ -11,8 +11,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const ColorsPalette: Story = {
-  render: () => (
+const ColorPallterComp = () => {
+  const { colors } = useTheme();
+
+  return (
     <>
       <Text $renderAs="headingLg" $displayAs="block">
         Colors Palette
@@ -25,7 +27,7 @@ export const ColorsPalette: Story = {
           marginTop: "20px",
         }}
       >
-        {Object.entries(Colors).map(([name, value]) => (
+        {Object.entries(colors).map(([name, value]) => (
           <div
             key={name}
             style={{
@@ -48,5 +50,9 @@ export const ColorsPalette: Story = {
         ))}
       </div>
     </>
-  ),
+  );
+};
+
+export const ColorsPalette: Story = {
+  render: () => <ColorPallterComp />,
 };

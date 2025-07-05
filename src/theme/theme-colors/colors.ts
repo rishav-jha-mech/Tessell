@@ -8,7 +8,7 @@ import { SurfaceColors } from "./surface-colors";
 import { TextColors } from "./text-colors";
 import { WarningColors } from "./warning-colors";
 
-export const Colors = {
+export const ThemeColors = {
   ...DangerColors,
   ...DarkColors,
   ...OpacityColors,
@@ -20,4 +20,4 @@ export const Colors = {
   ...WarningColors,
 };
 
-export type ColorKeys = keyof typeof Colors;
+export type ColorKeys = keyof typeof ThemeColors;
