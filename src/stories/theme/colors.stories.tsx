@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Text } from "../components/text/text";
-import { Colors } from "../tokens/colors/colors";
+import { Text } from "../../components/text/text";
+import { Colors } from "../../tokens/colors/colors";
 
 const meta = {
   title: "Theme/Colors",
