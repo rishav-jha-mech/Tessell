@@ -1,4 +1,4 @@
-import type { ColorKeys } from "../theme-colors/colors";
+import type { ColorKeys } from "../theme-colors/theme-colors";
 
 export type IconButtonState = {
   iconColor: ColorKeys;

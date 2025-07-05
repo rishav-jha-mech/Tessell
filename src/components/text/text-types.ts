@@ -1,4 +1,4 @@
-import type { ColorKeys } from "../../theme/theme-colors/colors";
+import type { ColorKeys } from "../../theme/theme-colors/theme-colors";
 import type { TextVariant } from "../../theme/theme-text/theme-text";
 
 export type TextProps = {

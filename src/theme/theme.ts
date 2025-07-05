@@ -1,5 +1,5 @@
 import { ThemeButtons } from "./theme-buttons/theme-buttons";
-import { ThemeColors } from "./theme-colors/colors";
+import { ThemeColors } from "./theme-colors/theme-colors";
 import { ThemeIconButton } from "./theme-icon-button/theme-icon-button";
 import { ThemeText } from "./theme-text/theme-text";
 

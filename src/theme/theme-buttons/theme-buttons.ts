@@ -13,7 +13,7 @@ export const ThemeButtons: ThemeButtonsType = {
       },
       focus: {
         background: "primary-300",
-        outlineColor: "opacity-primary",
+        outlineColor: "border-focus",
         color: "inverse",
         outlineWidth: 4,
         outlineBorderRadius: 4,

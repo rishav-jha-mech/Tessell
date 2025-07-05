@@ -1,4 +1,4 @@
-import type { ColorKeys } from "../theme-colors/colors";
+import type { ColorKeys } from "../theme-colors/theme-colors";
 import type { IconButtonThemeType } from "../theme-icon-button/theme-icon-button-types";
 import type { TextVariant } from "../theme-text/theme-text";
 

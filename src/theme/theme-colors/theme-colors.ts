@@ -1,3 +1,4 @@
+import { BorderColors } from "./border-colors";
 import { DangerColors } from "./danger-colors";
 import { DarkColors } from "./dark-colors";
 import { OpacityColors } from "./opacity-colors";
@@ -18,6 +19,7 @@ export const ThemeColors = {
   ...SurfaceColors,
   ...TextColors,
   ...WarningColors,
+  ...BorderColors,
 };
 
 export type ColorKeys = keyof typeof ThemeColors;

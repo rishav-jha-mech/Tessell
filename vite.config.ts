@@ -14,7 +14,12 @@ import svgr from "vite-plugin-svgr";
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), svgr()],
+  plugins: [
+    react(),
+    svgr({
+      include: "**/*.svg?react",
+    }),
+  ],
   test: {
     projects: [
       {

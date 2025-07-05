@@ -1,0 +1,39 @@
+import Add from "./add.svg?react";
+import Announcement from "./announcement.svg?react";
+import AvailabilityMachines from "./availability-machines.svg?react";
+import Bell from "./bell.svg?react";
+import Benchmarks from "./benchmarks.svg?react";
+import Book from "./book.svg?react";
+import Close from "./close.svg?react";
+import DataFlix from "./data-flix.svg?react";
+import Drawer from "./drawer.svg?react";
+import MyServices from "./my-services.svg?react";
+import Pin from "./pin.svg?react";
+import Provisioning from "./provisioning.svg?react";
+import ScriptLibrary from "./script-library.svg?react";
+import Servers from "./servers.svg?react";
+import Switcher from "./switcher.svg?react";
+import TessellLogo from "./tessell-logo.svg?react";
+import QuestionMark from "./question-mark.svg?react";
+
+export const AppIcons = {
+  Add,
+  Announcement,
+  AvailabilityMachines,
+  Bell,
+  Benchmarks,
+  Book,
+  Close,
+  DataFlix,
+  Drawer,
+  MyServices,
+  Pin,
+  Provisioning,
+  ScriptLibrary,
+  Servers,
+  Switcher,
+  TessellLogo,
+  QuestionMark,
+};
+
+export type AppIconKeys = keyof typeof AppIcons;

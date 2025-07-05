@@ -19,8 +19,8 @@ export const ThemeIconButton: IconButtonThemeType = {
     },
   },
   sizes: {
-    small: { iconSize: 12, iconRadius: 12 },
-    regular: { iconSize: 16, iconRadius: 16 },
-    large: { iconSize: 20, iconRadius: 20 },
+    small: { iconSize: 12, iconRadius: 4 },
+    regular: { iconSize: 16, iconRadius: 4 },
+    large: { iconSize: 20, iconRadius: 4 },
   },
 };

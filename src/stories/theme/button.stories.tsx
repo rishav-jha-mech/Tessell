@@ -1,3 +1,4 @@
+import { useTheme } from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../../components/button/button";
 
@@ -19,7 +20,6 @@ export const PrimaryRegular: Story = {
     $size: "regular",
   },
 };
-import { useTheme } from "styled-components";
 
 export const AllButtons: Story = {
   render: () => {
