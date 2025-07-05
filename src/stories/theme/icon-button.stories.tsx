@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import React from "react";
 import { useTheme } from "styled-components";
-import { AppIcons } from "../../assets/icons";
 import { IconButton } from "../../components/icon-button/icon-button";
+import { Text } from "../../components/text/text";
 
 const meta: Meta<typeof IconButton> = {
   title: "Components/IconButton",
@@ -14,14 +15,6 @@ const meta: Meta<typeof IconButton> = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-
-export const IntenseRegular: Story = {
-  args: {
-    $variant: "intense",
-    $size: "regular",
-    children: <AppIcons.TessellLogo />,
-  },
-};
 
 export const AllIconButtons: Story = {
   render: () => {
@@ -37,7 +30,8 @@ export const AllIconButtons: Story = {
       <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
         {variants.map((variant) => (
           <div key={variant}>
-            <h3>{variant.toUpperCase()}</h3>
+            <Text $renderAs="headingLg">{variant.toUpperCase()}</Text>
+            <br />
             <div
               style={{
                 display: "flex",
@@ -47,22 +41,35 @@ export const AllIconButtons: Story = {
               }}
             >
               {sizes.map((size) => (
-                <IconButton
-                  $iconName="TessellLogo"
-                  key={size}
-                  $variant={variant}
-                  $size={size}
-                  $ariaLabel={`${variant} ${size}`}
-                />
+                <React.Fragment key={size}>
+                  <IconButton
+                    $iconName="Close"
+                    key={size}
+                    $variant={variant}
+                    $size={size}
+                    $ariaLabel={`${variant} ${size}`}
+                  />
+                  <Text $renderAs="bodyPrimary" $displayAs="block">
+                    {size}
+                  </Text>
+                </React.Fragment>
               ))}
 
               <IconButton
-                $iconName="TessellLogo"
+                $iconName="Close"
                 $variant={variant}
                 $size="regular"
                 $isDisabled
                 $ariaLabel={`${variant} disabled`}
               />
+
+              <Text
+                $renderAs="bodyPrimary"
+                $displayAs="block"
+                $color="danger-300"
+              >
+                Disabled
+              </Text>
             </div>
           </div>
         ))}

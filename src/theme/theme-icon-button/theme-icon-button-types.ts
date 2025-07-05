@@ -2,7 +2,7 @@ import type { ColorKeys } from "../theme-colors/theme-colors";
 
 export type IconButtonState = {
   iconColor: ColorKeys;
-  outline?: string;
+  outlineWidth?: number;
   outlineColor?: ColorKeys;
   transition?: string;
 };

@@ -5,8 +5,14 @@ export const ThemeIconButton: IconButtonThemeType = {
     intense: {
       default: { iconColor: "subtlest" },
       hover: { iconColor: "primary" },
-      focus: { iconColor: "primary" },
-      active: { iconColor: "primary" },
+      focus: {
+        iconColor: "primary",
+        outlineWidth: 4,
+        outlineColor: "border-focus",
+      },
+      active: {
+        outlineColor: "border-focus",
+      },
       disabled: { iconColor: "disabled" },
     },
     // TODO: Find colors for this subtle variant - Wasnt available on Figma Token page
@@ -19,8 +25,8 @@ export const ThemeIconButton: IconButtonThemeType = {
     },
   },
   sizes: {
-    small: { iconSize: 12, iconRadius: 4 },
-    regular: { iconSize: 16, iconRadius: 4 },
-    large: { iconSize: 20, iconRadius: 4 },
+    small: { iconSize: 12, iconRadius: 2 },
+    regular: { iconSize: 16, iconRadius: 2 },
+    large: { iconSize: 20, iconRadius: 2 },
   },
 };

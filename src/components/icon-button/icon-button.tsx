@@ -18,6 +18,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
   const IconComponent = AppIcons[$iconName];
 
   const iconSize = sizes[$size].iconSize;
+
   return (
     <S.IconButtonBase
       $variant={$variant}
@@ -26,7 +27,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
       disabled={$isDisabled}
       {...rest}
     >
-      <S.IconWrapper iconSize={iconSize}>{<IconComponent />}</S.IconWrapper>
+      <S.IconWrapper>
+        <IconComponent height={iconSize * 0.8} width={iconSize * 0.8} />
+      </S.IconWrapper>
     </S.IconButtonBase>
   );
 };

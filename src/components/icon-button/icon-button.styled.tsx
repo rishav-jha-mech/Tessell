@@ -8,33 +8,34 @@ export const IconButtonBase = styled.button<
 >`
   ${({ theme, $variant, $size, disabled }) => {
     const variant = theme.iconButton.variants[$variant];
-    const size = theme.iconButton.sizes[$size];
-
-    const state = disabled ? variant.disabled : variant.default;
-
-    const iconColor = theme.colors[state.iconColor ?? "inverse"];
+    const { iconSize, iconRadius } = theme.iconButton.sizes[$size];
 
     return css`
-      display: inline-flex;
+      height: ${iconSize}px;
+      width: ${iconSize}px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: ${size.iconRadius * 2}px;
-      height: ${size.iconRadius * 2}px;
-      border-radius: 50%;
+      border-radius: ${iconRadius}px;
       background: transparent;
       cursor: ${disabled ? "not-allowed" : "pointer"};
-      color: ${iconColor};
       transition: color 0.2s ease;
+      border: none;
+      padding: 0;
 
       &:hover {
         color: ${!disabled &&
         theme.colors[variant.hover.iconColor ?? "inverse"]};
       }
 
-      &:focus-visible {
-        outline: 2px solid
-          ${!disabled && theme.colors[variant.focus.iconColor ?? "inverse"]};
+      &:focus {
+        outline: ${variant.focus.outlineWidth}px solid
+          ${!disabled &&
+          theme.colors[variant.focus.outlineColor ?? "border-focus"]};
         outline-offset: 2px;
+        animation-delay: 70ms;
+        animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+        animation-duration: 70ms;
       }
 
       &:active {
@@ -47,13 +48,8 @@ export const IconButtonBase = styled.button<
   }}
 `;
 
-export const IconWrapper = styled.span<{ iconSize: number }>`
-  display: inline-flex;
-  width: ${({ iconSize }) => iconSize}px;
-  height: ${({ iconSize }) => iconSize}px;
-
+export const IconWrapper = styled.span`
   svg {
-    width: 100%;
-    height: 100%;
+    display: block;
   }
 `;
