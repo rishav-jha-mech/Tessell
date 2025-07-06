@@ -59,7 +59,7 @@ export const CheckboxAllVariants: React.FC = () => {
 };
 
 const meta: Meta<typeof CheckboxAllVariants> = {
-  title: "Components/Checkbox",
+  title: "Components/Form/Checkbox",
   component: CheckboxAllVariants,
 };
 

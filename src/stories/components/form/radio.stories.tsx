@@ -76,7 +76,7 @@ export const RadioAllVariants: React.FC = () => {
 };
 
 const meta: Meta<typeof RadioAllVariants> = {
-  title: "Components/Radio",
+  title: "Components/Form/Radio",
   component: RadioAllVariants,
 };
 

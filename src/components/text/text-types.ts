@@ -7,4 +7,6 @@ export type TextProps = {
   $color?: ColorKeys | 'inherit';
   $displayAs?: React.CSSProperties["display"];
   $userSelect?: React.CSSProperties["userSelect"];
+  $marginHorizontal?: React.CSSProperties["margin"];
+  $marginVertical?: React.CSSProperties["margin"];
 };
