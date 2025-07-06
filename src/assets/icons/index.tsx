@@ -7,6 +7,8 @@ import Book from "./book.svg?react";
 import Close from "./close.svg?react";
 import ChevronDown from "./chevron-down.svg?react";
 import Chart from "./chart.svg?react";
+import CheckboxCheck from "./checkbox-check.svg?react";
+import CheckboxMinus from "./checkbox-minus.svg?react";
 import CirclePlus from "./circle-plus.svg?react";
 import Cloud from "./cloud.svg?react";
 import CmdE from "./cmd-e.svg?react";
@@ -30,6 +32,8 @@ export const AppIcons = {
   Book,
   Close,
   Chart,
+  CheckboxCheck,
+  CheckboxMinus,
   CirclePlus,
   Cloud,
   CmdE,
