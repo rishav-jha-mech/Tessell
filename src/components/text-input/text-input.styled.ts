@@ -1,0 +1,131 @@
+import styled, { css } from "styled-components";
+import type { TextInputProps } from "./text-input-types";
+import type { ThemeTextInputType } from "../../theme/theme-text-input/theme-text-input-types";
+
+export const InputWrapper = styled.div<{
+  $disabled?: boolean;
+  $focused?: boolean;
+  $marginBottom?: number;
+}>`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ${({ $marginBottom = 16 }) => $marginBottom}px;
+`;
+
+export const TextInputBaseWrapper = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+`;
+
+export const LeadingItemWrapper = styled.div<{
+  $size: keyof ThemeTextInputType["sizes"];
+}>`
+  position: absolute;
+  top: 0;
+  left: ${({ theme, $size }) => theme.textInput.sizes[$size].paddingX}px;
+  bottom: 0;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const TrailingItemWrapper = styled.div<{
+  $size: keyof ThemeTextInputType["sizes"];
+}>`
+  position: absolute;
+  top: 0;
+  right: ${({ theme, $size }) => theme.textInput.sizes[$size].paddingX}px;
+  bottom: 0;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextInputBase = styled.input<TextInputProps>`
+  ${({
+    theme,
+    $variant = "primary",
+    $size = "default",
+    $isSelected,
+    $leadingItem,
+    $trailingItem,
+    disabled,
+  }) => {
+    const variant = theme.textInput.variants[$variant];
+    const size = theme.textInput.sizes[$size];
+    const textVariant = theme.text[size.textVariant];
+
+    let paddingLeft = size.paddingX;
+    let paddingRight = size.paddingX;
+
+    if ($leadingItem) {
+      paddingLeft += 28;
+    }
+    if ($trailingItem) {
+      paddingRight += 20;
+    }
+
+    const background = disabled
+      ? theme.colors[variant.disabled.background]
+      : theme.colors[variant.default.background];
+
+    const borderColor = disabled
+      ? theme.colors[variant.disabled.border]
+      : $isSelected
+      ? theme.colors[variant.selected.border]
+      : theme.colors[variant.default.border];
+
+    const textColor = disabled
+      ? theme.colors[variant.disabled.text]
+      : theme.colors[variant.default.text];
+
+    const placeholderColor = disabled
+      ? theme.colors[variant.disabled.placeholder]
+      : theme.colors[variant.default.placeholder];
+
+    const focusBorderColor = variant.focus?.border
+      ? theme.colors[variant.focus.border]
+      : borderColor;
+
+    const outlineColor = variant.focus?.outlineColor
+      ? theme.colors[variant.focus.outlineColor]
+      : undefined;
+
+    return css`
+      flex: 1;
+      padding-left: ${paddingLeft}px;
+      padding-right: ${paddingRight}px;
+      padding-top: ${size.paddingY}px;
+      padding-bottom: ${size.paddingY}px;
+
+      background: ${background};
+      border: 1px solid ${borderColor};
+      border-radius: ${size.borderRadius}px;
+
+      color: ${textColor};
+      font-family: ${textVariant.fontFamily};
+      font-size: ${textVariant.fontSize};
+      font-weight: ${textVariant.fontWeight};
+
+      &::placeholder {
+        color: ${placeholderColor};
+      }
+
+      &:focus {
+        border-color: ${focusBorderColor};
+        outline-style: solid;
+        outline-width: ${variant.focus?.outlineWidth || 0}px;
+        outline-color: ${outlineColor};
+        border-radius: ${variant.focus?.outlineRadius || size.borderRadius}px;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      transition: all 0.2s ease;
+    `;
+  }}
+`;
