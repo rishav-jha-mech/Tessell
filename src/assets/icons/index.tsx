@@ -5,6 +5,11 @@ import Bell from "./bell.svg?react";
 import Benchmarks from "./benchmarks.svg?react";
 import Book from "./book.svg?react";
 import Close from "./close.svg?react";
+import ChevronDown from "./chevron-down.svg?react";
+import Chart from "./chart.svg?react";
+import CirclePlus from "./circle-plus.svg?react";
+import Cloud from "./cloud.svg?react";
+import CmdE from "./cmd-e.svg?react";
 import DataFlix from "./data-flix.svg?react";
 import Drawer from "./drawer.svg?react";
 import MyServices from "./my-services.svg?react";
@@ -24,6 +29,11 @@ export const AppIcons = {
   Benchmarks,
   Book,
   Close,
+  Chart,
+  CirclePlus,
+  Cloud,
+  CmdE,
+  ChevronDown,
   DataFlix,
   Drawer,
   MyServices,

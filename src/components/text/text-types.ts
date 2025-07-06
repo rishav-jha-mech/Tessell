@@ -4,6 +4,6 @@ import type { TextVariant } from "../../theme/theme-text/theme-text";
 export type TextProps = {
   children: React.ReactNode;
   $renderAs: TextVariant;
-  $color?: ColorKeys;
+  $color?: ColorKeys | 'inherit';
   $displayAs?: React.CSSProperties["display"];
 };

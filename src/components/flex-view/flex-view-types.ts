@@ -2,6 +2,7 @@ import type { ColorKeys } from "../../theme/theme-colors/theme-colors";
 
 export interface FlexViewProps extends React.HTMLAttributes<HTMLDivElement> {
   $gap?: number;
+  $flex?: React.CSSProperties["flex"];
   $padding?: string;
   $direction?: React.CSSProperties["flexDirection"];
   $justify?: React.CSSProperties["justifyContent"];

@@ -46,6 +46,7 @@ export const TrailingItemWrapper = styled.div<{
 export const TextInputBase = styled.input<TextInputProps>`
   ${({
     theme,
+    $cursor = "text",
     $variant = "primary",
     $size = "default",
     $isSelected,
@@ -108,6 +109,8 @@ export const TextInputBase = styled.input<TextInputProps>`
       font-family: ${textVariant.fontFamily};
       font-size: ${textVariant.fontSize};
       font-weight: ${textVariant.fontWeight};
+
+      cursor: ${$cursor};
 
       &::placeholder {
         color: ${placeholderColor};

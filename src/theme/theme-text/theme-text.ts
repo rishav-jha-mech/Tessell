@@ -1,7 +1,7 @@
 const fontWeights = {
-  normal: 400,
-  medium: 500,
-  semibold: 600,
+  normal: 450,
+  medium: 550,
+  semibold: 650,
 };
 
 export const ThemeText = {

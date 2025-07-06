@@ -13,7 +13,11 @@ export const TextBase = styled.span<StyledTextProps>`
       font-weight: ${variant.fontWeight};
       letter-spacing: ${variant.letterSpacing};
       vertical-align: ${variant.verticalAlign};
-      color: ${$color ? theme.colors[$color] : theme.colors.primary};
+      color: ${$color === "inherit"
+        ? "inherit"
+        : $color
+        ? theme.colors[$color]
+        : theme.colors.primary};
       display: ${$displayAs};
     `;
   }}

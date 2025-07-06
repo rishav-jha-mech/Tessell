@@ -37,8 +37,8 @@ export const ThemeTextInput: ThemeTextInputType = {
       borderRadius: 4,
     },
     default: {
-      paddingX: 8,
-      paddingY: 12,
+      paddingX: 12,
+      paddingY: 8,
       textVariant: "bodyPrimary",
       borderRadius: 4,
     },

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FlexContainer = styled.div<FlexViewProps>`
   display: flex;
-  background-color: ${({ $background = "inverse", theme }) =>
+  background-color: ${({ $background = "opacity-transparent", theme }) =>
     theme.colors[$background]};
   flex-direction: ${({ $direction = "row" }) => $direction};
   justify-content: ${({ $justify = "flex-start" }) => $justify};
@@ -11,4 +11,5 @@ export const FlexContainer = styled.div<FlexViewProps>`
   flex-wrap: ${({ $wrap = "nowrap" }) => $wrap};
   gap: ${({ $gap = 0 }) => `${$gap}px`};
   padding: ${({ $padding = 0 }) => `${$padding}px`};
+  flex: ${({ $flex = "none" }) => $flex};
 `;

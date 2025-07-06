@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppIcons } from "../../../assets/icons";
 import FlexView from "../../../components/flex-view/flex-view";
-import { IconButton } from "../../../components/icon-button/icon-button";
 import TextInput from "../../../components/text-input/text-input";
 import { Text } from "../../../components/text/text";
 import Separator from "../../../components/separator/separator";
@@ -37,14 +36,7 @@ const AllTextInputsComp = () => {
             placeholder="Leading & trailing items"
             $label="Input with leading and trailing items"
             $leadingItem={<AppIcons.TessellLogo />}
-            $trailingItem={
-              <IconButton
-                $variant="intense"
-                $iconName="Close"
-                $size="large"
-                $ariaLabel="Close"
-              />
-            }
+            $trailingItem={<AppIcons.Close />}
             $size={size as keyof typeof textInput.sizes}
           />
 

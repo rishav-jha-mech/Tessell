@@ -1,3 +1,4 @@
+import type React from "react";
 import type { ColorKeys } from "../../theme/theme-colors/theme-colors";
 import type { ThemeTextInputType } from "../../theme/theme-text-input/theme-text-input-types";
 
@@ -15,4 +16,5 @@ export interface TextInputProps
   $trailingItem?: React.ReactNode;
   $isDisabled?: boolean;
   $marginBottom?: number;
+  $cursor?: React.CSSProperties["cursor"];
 }
