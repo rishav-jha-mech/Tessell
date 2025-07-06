@@ -10,6 +10,9 @@ export const FlexContainer = styled.div<FlexViewProps>`
   align-items: ${({ $align = "stretch" }) => $align};
   flex-wrap: ${({ $wrap = "nowrap" }) => $wrap};
   gap: ${({ $gap = 0 }) => `${$gap}px`};
-  padding: ${({ $padding = 0 }) => `${$padding}px`};
   flex: ${({ $flex = "none" }) => $flex};
+  border-radius: ${({ $borderRadius = 0 }) => `${$borderRadius}px`};
+  height: ${({ $height = "auto" }) => $height};
+  padding: ${({ $paddingHorizontal = 0, $paddingVertical = 0 }) =>
+    `${$paddingVertical}px ${$paddingHorizontal}px`};
 `;

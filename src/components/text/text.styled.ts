@@ -4,7 +4,7 @@ import type { TextProps } from "./text-types";
 type StyledTextProps = Omit<TextProps, "children">;
 
 export const TextBase = styled.span<StyledTextProps>`
-  ${({ theme, $renderAs, $color, $displayAs }) => {
+  ${({ theme, $renderAs, $color, $displayAs, $userSelect = "text" }) => {
     const variant = theme.text[$renderAs];
     return css`
       font-family: ${variant.fontFamily};
@@ -19,6 +19,7 @@ export const TextBase = styled.span<StyledTextProps>`
         ? theme.colors[$color]
         : theme.colors.primary};
       display: ${$displayAs};
+      user-select: ${$userSelect};
     `;
   }}
 `;

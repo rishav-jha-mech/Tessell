@@ -14,6 +14,7 @@ import Cloud from "./cloud.svg?react";
 import CmdE from "./cmd-e.svg?react";
 import DataFlix from "./data-flix.svg?react";
 import Drawer from "./drawer.svg?react";
+import InfoIcon from "./info-icon.svg?react";
 import MyServices from "./my-services.svg?react";
 import Pin from "./pin.svg?react";
 import Provisioning from "./provisioning.svg?react";
@@ -40,6 +41,7 @@ export const AppIcons = {
   ChevronDown,
   DataFlix,
   Drawer,
+  InfoIcon,
   MyServices,
   Pin,
   Provisioning,

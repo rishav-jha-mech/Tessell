@@ -6,4 +6,5 @@ export type TextProps = {
   $renderAs: TextVariant;
   $color?: ColorKeys | 'inherit';
   $displayAs?: React.CSSProperties["display"];
+  $userSelect?: React.CSSProperties["userSelect"];
 };
