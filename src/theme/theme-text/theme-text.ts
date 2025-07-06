@@ -1,7 +1,7 @@
 const fontWeights = {
-  normal: 400,
-  medium: 500,
-  semibold: 600,
+  normal: 500,
+  medium: 600,
+  semibold: 700,
 };
 
 export const ThemeText = {
@@ -55,9 +55,9 @@ export const ThemeText = {
   },
   bodySecondary: {
     fontFamily: "Inter, sans-serif",
-    fontWeight: fontWeights.normal,
-    fontSize: "11px",
-    lineHeight: "16px",
+    fontWeight: fontWeights.semibold,
+    fontSize: "13px",
+    lineHeight: "20px",
     letterSpacing: "0px",
     verticalAlign: "middle",
   },
@@ -69,6 +69,13 @@ export const ThemeText = {
     lineHeight: "12px",
     letterSpacing: "0px",
     verticalAlign: "middle",
+  },
+  ["Text-body/secondary/secondary"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: 400,
+    fontSize: "11px",
+    lineHeight: "16px",
   },
 };
 

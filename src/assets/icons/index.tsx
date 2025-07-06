@@ -16,6 +16,7 @@ import DataFlix from "./data-flix.svg?react";
 import Drawer from "./drawer.svg?react";
 import InfoIcon from "./info-icon.svg?react";
 import MyServices from "./my-services.svg?react";
+import OracleLogo from "./oracle.svg?react";
 import Pin from "./pin.svg?react";
 import Provisioning from "./provisioning.svg?react";
 import ScriptLibrary from "./script-library.svg?react";
@@ -43,6 +44,7 @@ export const AppIcons = {
   Drawer,
   InfoIcon,
   MyServices,
+  OracleLogo,
   Pin,
   Provisioning,
   ScriptLibrary,
