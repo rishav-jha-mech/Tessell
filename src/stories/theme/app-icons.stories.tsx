@@ -2,6 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import React from "react";
 import { AppIcons, type AppIconKeys } from "../../assets/icons";
+import { Text } from "../../components/text/text";
 
 const meta: Meta = {
   title: "Theme/AppIcons",
@@ -15,8 +16,9 @@ const DisplayAllAppIcons: React.FC = () => {
   const iconKeys = Object.keys(AppIcons) as AppIconKeys[];
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <h2>All App Icons</h2>
+    <div>
+      <Text $renderAs="headingLg">All App Icons</Text>
+      <br />
       <div
         style={{
           display: "flex",
