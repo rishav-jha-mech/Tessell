@@ -21,9 +21,12 @@ type ButtonStates = {
 type ButtonSize = {
   padding: string;
   textRenderAs: TextVariant;
-  iconStyle: keyof IconButtonThemeType["sizes"];
   radius: number;
   minWidth: number;
+  iconStyle: {
+    variant: keyof IconButtonThemeType["sizes"];
+    iconSize: number;
+  };
 };
 
 export type ThemeButtonsType = {

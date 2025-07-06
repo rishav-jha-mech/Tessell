@@ -28,23 +28,32 @@ export const ThemeButtons: ThemeButtonsType = {
     small: {
       padding: "8px 12px",
       textRenderAs: "bodySecondary",
-      iconStyle: "small",
       radius: 4,
       minWidth: 104,
+      iconStyle: {
+        variant: "small",
+        iconSize: 32,
+      },
     },
     regular: {
       padding: "8px 12px",
       textRenderAs: "bodyPrimary",
-      iconStyle: "regular",
       radius: 4,
       minWidth: 119,
+      iconStyle: {
+        variant: "regular",
+        iconSize: 36,
+      },
     },
     large: {
       padding: "10px 12px",
       textRenderAs: "bodyPrimary",
-      iconStyle: "large",
       radius: 4,
       minWidth: 119,
+      iconStyle: {
+        variant: "large",
+        iconSize: 40,
+      },
     },
   },
 };

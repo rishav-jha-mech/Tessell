@@ -2,66 +2,82 @@ import styled, { css } from "styled-components";
 import type { ButtonProps } from "./button-types";
 
 export const ButtonBase = styled.button<
-  Required<Pick<ButtonProps, "$type" | "$size" | "$ifFullWidth" | "$iconOnly">> & {
+  Required<
+    Pick<ButtonProps, "$type" | "$size" | "$isFullWidth" | "$iconOnly">
+  > & {
     disabled?: boolean;
   }
 >`
-  ${({ theme, $type, $size, $ifFullWidth, $iconOnly, disabled }) => {
+  ${({ theme, $type, $size, $isFullWidth, $iconOnly, disabled }) => {
     const variant = theme.buttons.variants[$type];
     const size = theme.buttons.sizes[$size];
+    const IconStyle = size.iconStyle;
     const textVariant = theme.text[size.textRenderAs];
 
-    const bg = disabled
-      ? theme.colors[variant.disabled.background]
-      : theme.colors[variant.default.background];
-
-    const fg = disabled
-      ? theme.colors[variant.disabled.color]
-      : theme.colors[variant.default.color];
-
+    const defaultBg = theme.colors[variant.default.background];
+    const defaultFg = theme.colors[variant.default.color];
     const hoverBg = variant.hover?.background
       ? theme.colors[variant.hover.background]
-      : bg;
-
-    const hoverColor = variant.hover?.color
+      : defaultBg;
+    const hoverFg = variant.hover?.color
       ? theme.colors[variant.hover.color]
-      : fg;
+      : defaultFg;
 
     const focusOutlineColor = variant.focus?.outlineColor
       ? theme.colors[variant.focus.outlineColor]
-      : undefined;
+      : "transparent";
+
+    const backgroundColor = disabled
+      ? theme.colors[variant.disabled.background]
+      : defaultBg;
+
+    const textColor = disabled
+      ? theme.colors[variant.disabled.color]
+      : defaultFg;
 
     return css`
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      cursor: ${disabled ? "not-allowed" : "pointer"};
+
+      height: ${$iconOnly ? `${IconStyle.iconSize}px` : "auto"};
+      width: ${
+        $isFullWidth ? "100%" : $iconOnly ? `${IconStyle.iconSize}px` : "auto"
+      };
+      min-width: ${$iconOnly ? "0" : `${size.minWidth}px`};
+      padding: ${$iconOnly ? "0" : size.padding};
       border: none;
       border-radius: ${size.radius}px;
-      padding: ${$iconOnly ? "8px" : size.padding};
-      background: ${bg};
-      width: ${$ifFullWidth ? "100%" : "auto"};
-      min-width: ${size.minWidth}px;
+
+      background-color: ${backgroundColor};
+      color: ${textColor};
+      cursor: ${disabled ? "not-allowed" : "pointer"};
       pointer-events: ${disabled ? "none" : "auto"};
-      
-      color: ${fg};
+
       font-family: ${textVariant.fontFamily};
       font-size: ${textVariant.fontSize};
       line-height: ${textVariant.lineHeight};
       font-weight: ${textVariant.fontWeight};
-      
-      transition: all 0.2s ease;
-      
+
+      transition: all 0.2s ease-in-out;
+
       &:hover {
-        background: ${!disabled && hoverBg};
-        color: ${!disabled && hoverColor};
+        background-color: ${!disabled && hoverBg};
+        color: ${!disabled && hoverFg};
       }
 
       &:focus {
         outline-style: solid;
         outline-width: ${variant.focus?.outlineWidth || 0}px;
         outline-color: ${focusOutlineColor};
-        border-radius: ${variant.focus?.outlineBorderRadius || 0}px;
+        border-radius: ${variant.focus?.outlineBorderRadius || size.radius}px;
+      }
+
+      &:disabled {
+        background-color: ${theme.colors[variant.disabled.background]};
+        color: ${theme.colors[variant.disabled.color]};
+        cursor: not-allowed;
+        pointer-events: none;
       }
     `;
   }}

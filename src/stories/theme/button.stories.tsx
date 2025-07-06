@@ -1,6 +1,9 @@
 import { useTheme } from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../../components/button/button";
+import FlexView from "../../components/flex-view/flex-view";
+import { Text } from "../../components/text/text";
+import Separator from "../../components/separator/separator";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -18,6 +21,8 @@ export const PrimaryRegular: Story = {
   args: {
     $type: "primary",
     $size: "regular",
+    $icon: "Add",
+    children: "Button CTA",
   },
 };
 
@@ -32,39 +37,93 @@ export const AllButtons: Story = {
     >;
 
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+      <FlexView $gap={32}>
         {variants.map((variant) => (
           <div key={variant}>
-            <h3>{variant.toUpperCase()}</h3>
-            <div
-              style={{
-                display: "flex",
-                gap: "1rem",
-                flexWrap: "wrap",
-                alignItems: "flex-start",
-              }}
-            >
+            <Text $renderAs="headingLg">{variant.toUpperCase()}</Text>
+            <Separator $height={20} />
+            <FlexView $gap={20}>
               {sizes.map((size) => (
-                <Button key={size} $type={variant} $size={size}>
+                <Button key={size} $type={variant} $size={size} $icon="Add">
                   {`${variant} ${size}`}
                 </Button>
               ))}
 
-              <Button $type={variant} $size="regular" disabled>
+              <Button $type={variant} $size="regular" $icon="Add" disabled>
                 Disabled
               </Button>
 
-              <Button $type={variant} $size="regular" $isLoading>
+              <Button $type={variant} $size="regular" $icon="Add" $isLoading>
                 Loading
               </Button>
-
-              <Button $type={variant} $size="regular" $ifFullWidth>
-                Full Width
+            </FlexView>
+            <Separator $height={20} />
+            <Text $renderAs="headingLg">Full Width</Text>
+            <Separator $height={20} />
+            <FlexView $gap={20} $direction="column">
+              {sizes.map((size) => (
+                <Button
+                  key={size}
+                  $type={variant}
+                  $size={size}
+                  $icon="Add"
+                  $isFullWidth
+                >
+                  {`${variant} ${size}`}
+                </Button>
+              ))}
+              <Button
+                $type={variant}
+                $size="regular"
+                $icon="Add"
+                disabled
+                $isFullWidth
+              >
+                Disabled
               </Button>
-            </div>
+
+              <Button
+                $type={variant}
+                $size="regular"
+                $icon="Add"
+                $isLoading
+                $isFullWidth
+              >
+                Loading
+              </Button>
+            </FlexView>
+
+            <Separator $height={20} />
+            <Text $renderAs="headingLg">Icon Only</Text>
+            <Separator $height={20} />
+            <FlexView $gap={20}>
+              {sizes.map((size) => (
+                <Button
+                  key={size}
+                  $type={variant}
+                  $size={size}
+                  $icon="Add"
+                  $iconOnly
+                />
+              ))}
+              <Button
+                $type={variant}
+                $size={"large"}
+                $icon="Add"
+                $iconOnly
+                disabled
+              />
+              <Button
+                $type={variant}
+                $size={"large"}
+                $icon="Add"
+                $iconOnly
+                $isLoading
+              />
+            </FlexView>
           </div>
         ))}
-      </div>
+      </FlexView>
     );
   },
 };
