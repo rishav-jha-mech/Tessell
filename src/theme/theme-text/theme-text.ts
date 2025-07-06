@@ -1,12 +1,12 @@
 const fontWeights = {
-  normal: 450,
-  medium: 550,
-  semibold: 650,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
 };
 
 export const ThemeText = {
   headingLg: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: fontWeights.semibold,
     fontSize: "20px",
     lineHeight: "24px",
@@ -14,7 +14,7 @@ export const ThemeText = {
     verticalAlign: "middle",
   },
   headingMd: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: fontWeights.medium,
     fontSize: "15px",
     lineHeight: "22px",
@@ -22,7 +22,7 @@ export const ThemeText = {
     verticalAlign: "middle",
   },
   headingSm: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: fontWeights.medium,
     fontSize: "13px",
     lineHeight: "20px",
@@ -30,7 +30,7 @@ export const ThemeText = {
     verticalAlign: "middle",
   },
   headingForm: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: fontWeights.medium,
     fontSize: "12px",
     lineHeight: "16px",
@@ -38,7 +38,7 @@ export const ThemeText = {
     verticalAlign: "middle",
   },
   bodyPrimary: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: fontWeights.medium,
     fontSize: "13px",
     lineHeight: "20px",
@@ -54,7 +54,7 @@ export const ThemeText = {
     verticalAlign: "middle",
   },
   bodySecondary: {
-    fontFamily: "'Inter', sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: fontWeights.normal,
     fontSize: "11px",
     lineHeight: "16px",
