@@ -51,6 +51,10 @@ export const StyledRadio = styled.span<StyledRadioProps>`
     const outlineColor = colors["border-focus"];
 
     return css`
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      
       width: ${sizes.size}px;
       height: ${sizes.size}px;
 
@@ -59,6 +63,8 @@ export const StyledRadio = styled.span<StyledRadioProps>`
         : colors[states.default.background]};
       border-color: ${disabled
         ? colors[states.disabled.border]
+        : $checked
+        ? colors[states.active.border]
         : colors[states.default.border]};
 
       ${!disabled &&

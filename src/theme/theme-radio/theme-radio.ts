@@ -5,13 +5,13 @@ export const ThemeRadio: ThemeRadioType = {
     primary: {
       default: {
         background: "opacity-transparent",
-        border: "primary-200",
+        border: "border-radio",
         dot: "primary-200",
       },
       hover: {
         background: "opacity-transparent",
-        border: "primary-300",
-        dot: "primary-300",
+        border: "primary-200",
+        dot: "primary-200",
       },
       active: {
         background: "opacity-transparent",
@@ -19,8 +19,8 @@ export const ThemeRadio: ThemeRadioType = {
         dot: "primary-300",
       },
       disabled: {
-        background: "surface-50",
-        border: "surface-300",
+        background: "surface-secondary",
+        border: "border-disabled",
         dot: "inverse",
       },
     },
@@ -28,11 +28,11 @@ export const ThemeRadio: ThemeRadioType = {
   sizes: {
     regular: {
       size: 16,
-      dotSize: 8,
+      dotSize: 6,
     },
     large: {
       size: 20,
-      dotSize: 10,
+      dotSize: 8,
     },
   },
 };
