@@ -5,20 +5,25 @@ import type { ThemeTextInputType } from "../../theme/theme-text-input/theme-text
 export const InputWrapper = styled.div<{
   $disabled?: boolean;
   $focused?: boolean;
-  $marginBottom?: number;
+  $marginBottomX?: number;
   $maxWidth?: React.CSSProperties["maxWidth"];
 }>`
   display: flex;
   flex-direction: column;
   max-width: ${({ $maxWidth = "100%" }) => $maxWidth};
-  margin-bottom: ${({ $marginBottom = 16 }) => $marginBottom}px;
+  margin-bottom: ${({ $marginBottomX = 0, theme }) =>
+    $marginBottomX * theme.spacing.GUTTER}px;
 `;
 
-export const TextInputBaseWrapper = styled.div<{ $height: number }>`
+export const TextInputBaseWrapper = styled.div<{
+  $height: number;
+  $multiline: boolean;
+}>`
   display: flex;
   position: relative;
   width: 100%;
-  height: ${({ $height }) => $height}px;
+  height: ${({ $height, $multiline }) =>
+    $multiline ? "auto" : `${$height}px`};
 `;
 
 export const LeadingItemWrapper = styled.div<{
@@ -53,6 +58,7 @@ export const TextInputBase = styled.input<TextInputProps>`
     $variant = "primary",
     $size = "default",
     $isSelected,
+    $multiline = false,
     $leadingItem,
     $trailingItem,
     disabled,
@@ -98,6 +104,14 @@ export const TextInputBase = styled.input<TextInputProps>`
       : undefined;
 
     return css`
+      ${$multiline &&
+      css`
+        padding: ${({ theme }) =>
+          `${theme.spacing.GUTTER * 0.5}px ${theme.spacing.GUTTER * 0.75}px`};
+        resize: none;
+        height: 92px; // Default height for multiline input
+      `}
+
       flex: 1;
       padding-left: ${paddingLeft}px;
       padding-right: ${paddingRight}px;

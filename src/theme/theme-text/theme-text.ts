@@ -114,6 +114,14 @@ export const ThemeText = {
     lineHeight: "24px",
     letterSpacing: "-0.2px",
   },
+  ["Heading/3"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: fontWeights.semibold,
+    fontSize: "13px",
+    lineHeight: "20px",
+    letterSpacing: "0px",
+  },
   ["button/large"]: {
     fontFamily: "Inter, sans-serif",
     fontStyle: "normal",

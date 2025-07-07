@@ -15,7 +15,8 @@ export interface TextInputProps
   $leadingItem?: React.ReactNode;
   $trailingItem?: React.ReactNode;
   $isDisabled?: boolean;
-  $marginBottom?: number;
+  $marginBottomX?: number;
   $cursor?: React.CSSProperties["cursor"];
   $maxWidth?: React.CSSProperties["maxWidth"];
+  $multiline?: boolean;
 }

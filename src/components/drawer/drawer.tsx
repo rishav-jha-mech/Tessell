@@ -85,6 +85,7 @@ const Drawer: React.FC<DrawerProps> = ({
         <Separator height={GUTTER / 2} />
         {dropdown && (
           <Dropdown
+            $size="small"
             $options={dropdown.options}
             $placeholder="Select an option"
             $value={dropdown.selected}

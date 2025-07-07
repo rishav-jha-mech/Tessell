@@ -14,62 +14,41 @@ export const RadioAllVariants: React.FC = () => {
 
   return (
     <FlexView $gap={40}>
-      {/* Regular radios */}
       <FlexView $gap={20} $direction="column" style={{ width: "300px" }}>
         <Text $renderAs="headingLg">Regular Radios</Text>
+        <Radio
+          name="regular-group"
+          $label="Option 1"
+          $checked={radioValue === "option1"}
+          onChange={() => setRadioValue("option1")}
+        />
 
-        <FlexView $gap={10}>
-          <Radio
-            name="regular-group"
-            $checked={radioValue === "option1"}
-            onChange={() => setRadioValue("option1")}
-          />
-          <Text $renderAs="bodyPrimary">Option 1</Text>
-        </FlexView>
-
-        <FlexView $gap={10}>
-          <Radio
-            name="regular-group"
-            $checked={radioValue === "option2"}
-            onChange={() => setRadioValue("option2")}
-          />
-          <Text $renderAs="bodyPrimary">Option 2</Text>
-        </FlexView>
-
-        <FlexView $gap={10}>
-          <Radio disabled />
-          <Text $renderAs="bodyPrimary">Disabled</Text>
-        </FlexView>
+        <Radio
+          name="regular-group"
+          $label="Option 2"
+          $checked={radioValue === "option2"}
+          onChange={() => setRadioValue("option2")}
+        />
+        <Radio $label="Disabled" disabled />
       </FlexView>
-
-      {/* Large radios */}
       <FlexView $gap={20} $direction="column" style={{ width: "300px" }}>
         <Text $renderAs="headingLg">Large Radios</Text>
+        <Radio
+          name="large-group"
+          $label="Option 1"
+          $size="large"
+          $checked={largeRadioValue === "option1"}
+          onChange={() => setLargeRadioValue("option1")}
+        />
 
-        <FlexView $gap={10}>
-          <Radio
-            name="large-group"
-            $size="large"
-            $checked={largeRadioValue === "option1"}
-            onChange={() => setLargeRadioValue("option1")}
-          />
-          <Text $renderAs="bodyPrimary">Option 1</Text>
-        </FlexView>
-
-        <FlexView $gap={10}>
-          <Radio
-            name="large-group"
-            $size="large"
-            $checked={largeRadioValue === "option2"}
-            onChange={() => setLargeRadioValue("option2")}
-          />
-          <Text $renderAs="bodyPrimary">Option 2</Text>
-        </FlexView>
-
-        <FlexView $gap={10}>
-          <Radio $size="large" disabled />
-          <Text $renderAs="bodyPrimary">Disabled</Text>
-        </FlexView>
+        <Radio
+          name="large-group"
+          $label="Option 2"
+          $size="large"
+          $checked={largeRadioValue === "option2"}
+          onChange={() => setLargeRadioValue("option2")}
+        />
+        <Radio $label="Disabled" $size="large" disabled />
       </FlexView>
     </FlexView>
   );

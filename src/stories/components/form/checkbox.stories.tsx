@@ -12,47 +12,33 @@ export const CheckboxAllVariants: React.FC = () => {
     <FlexView>
       <FlexView $gap={20} $direction="column" style={{ width: "300px" }}>
         <Text $renderAs="headingLg">Regular Checkboxes</Text>
-        <FlexView $gap={10}>
-          <Checkbox
-            $checked={checkbox1}
-            onChange={() => setCheckbox1(!checkbox1)}
-          />
-          <Text $renderAs="bodyPrimary">Default</Text>
-        </FlexView>
-        <FlexView $gap={10}>
-          <Checkbox
-            $checked={checkbox2}
-            onChange={() => setCheckbox2(!checkbox2)}
-          />
-          <Text $renderAs="bodyPrimary">False by default</Text>
-        </FlexView>
-        <FlexView $gap={10}>
-          <Checkbox $disabled />
-          <Text $renderAs="bodyPrimary">Disabled</Text>
-        </FlexView>
+        <Checkbox
+          $label="Default"
+          $checked={checkbox1}
+          onChange={() => setCheckbox1(!checkbox1)}
+        />
+        <Checkbox
+          $label="False by default"
+          $checked={checkbox2}
+          onChange={() => setCheckbox2(!checkbox2)}
+        />
+        <Checkbox $label="Disabled" $disabled />
       </FlexView>
       <FlexView $gap={20} $direction="column" style={{ width: "300px" }}>
         <Text $renderAs="headingLg">Large Checkboxes</Text>
-        <FlexView $gap={10}>
-          <Checkbox
-            $checked={checkbox1}
-            $size="large"
-            onChange={() => setCheckbox1(!checkbox1)}
-          />
-          <Text $renderAs="bodyPrimary">Default</Text>
-        </FlexView>
-        <FlexView $gap={10}>
-          <Checkbox
-            $checked={checkbox2}
-            $size="large"
-            onChange={() => setCheckbox2(!checkbox2)}
-          />
-          <Text $renderAs="bodyPrimary">False by default</Text>
-        </FlexView>
-        <FlexView $gap={10}>
-          <Checkbox $size="large" $disabled />
-          <Text $renderAs="bodyPrimary">Disabled</Text>
-        </FlexView>
+        <Checkbox
+          $label="Default"
+          $size="large"
+          $checked={checkbox1}
+          onChange={() => setCheckbox1(!checkbox1)}
+        />
+        <Checkbox
+          $label="False by default"
+          $size="large"
+          $checked={checkbox2}
+          onChange={() => setCheckbox2(!checkbox2)}
+        />
+        <Checkbox $size="large" $label="Disabled" $disabled />
       </FlexView>
     </FlexView>
   );

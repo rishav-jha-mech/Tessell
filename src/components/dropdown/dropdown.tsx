@@ -11,6 +11,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   $options,
   $value,
   $helpText,
+  $size,
   $isDisabled = false,
   onChange,
 }) => {
@@ -41,7 +42,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
     <S.DropdownWrapper ref={dropdownRef} $disabled={$isDisabled}>
       <TextInput
         $label={$label}
-        $size="small"
+        $size={$size}
         placeholder={$placeholder}
         value={selectedOption?.label || ""}
         readOnly

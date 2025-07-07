@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useState, type FocusEvent } from "react";
 import Separator from "../separator/separator";
 import { Text } from "../text/text";
 import type { TextInputProps } from "./text-input-types";
@@ -14,7 +14,8 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
     $trailingItem,
     $isDisabled = false,
     $maxWidth,
-    $marginBottom,
+    $marginBottomX,
+    $multiline = false,
     ...rest
   } = props;
   const [focused, setFocused] = useState(false);
@@ -25,7 +26,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
 
   return (
     <S.InputWrapper
-      $marginBottom={$marginBottom}
+      $marginBottomX={$marginBottomX}
       $maxWidth={$maxWidth}
       $disabled={$isDisabled}
       $focused={focused}
@@ -33,16 +34,17 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
       {$label && <Text $renderAs="headingForm">{$label}</Text>}
       <Separator height={8} />
 
-      <S.TextInputBaseWrapper $height={height}>
+      <S.TextInputBaseWrapper $height={height} $multiline={$multiline}>
         <S.TextInputBase
+          as={$multiline ? "textarea" : "input"}
           {...props}
           {...rest}
           ref={ref}
-          onFocus={(e) => {
+          onFocus={(e: FocusEvent<HTMLInputElement, Element>) => {
             setFocused(true);
             rest.onFocus?.(e);
           }}
-          onBlur={(e) => {
+          onBlur={(e: FocusEvent<HTMLInputElement, Element>) => {
             setFocused(false);
             rest.onBlur?.(e);
           }}

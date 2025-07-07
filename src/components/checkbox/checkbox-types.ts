@@ -2,6 +2,7 @@ import type { ThemeCheckboxType } from "../../theme/theme-checkbox/theme-checkbo
 
 export interface CheckboxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
+  $label?: string;
   $variant?: keyof ThemeCheckboxType["variants"];
   $size?: keyof ThemeCheckboxType["sizes"];
   $disabled?: boolean;

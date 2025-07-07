@@ -4,6 +4,7 @@ import FlexView from "../flex-view/flex-view";
 
 export const DropdownWrapper = styled.div<{ $disabled?: boolean }>`
   position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};

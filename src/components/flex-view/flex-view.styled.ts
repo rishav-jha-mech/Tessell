@@ -28,4 +28,6 @@ export const FlexContainer = styled.div<FlexViewProps>`
     }
     return "0px";
   }};
+  margin-bottom: ${({ $marginBottomX = 0, theme }) =>
+    $marginBottomX ? `${$marginBottomX * theme.spacing.GUTTER}px` : "0px"};
 `;

@@ -16,6 +16,9 @@ export const CreateServiceSectionWrapper = styled.div`
 export const ContentContainer = styled.div`
   flex: 1;
   background-color: ${({ theme }) => theme.colors["surface-0"]};
-  padding: ${({ theme }) => theme.spacing.GUTTER}px;
   border-radius: 4px;
+  padding-top: ${({ theme }) => theme.spacing.GUTTER}px;
+  padding-bottom: ${({ theme }) => theme.spacing.GUTTER}px;
+  padding-left: ${({ theme }) => theme.spacing.GUTTER}px;
+  padding-right: ${({ theme }) => theme.spacing.GUTTER * 1.75}px;
 `;

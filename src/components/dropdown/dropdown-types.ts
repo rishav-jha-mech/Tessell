@@ -10,6 +10,7 @@ export interface DropdownItemProps {
 }
 export interface DropdownProps {
   $label?: string;
+  $size: TextInputProps["$size"];
   $placeholder: string;
   $options: DropdownItemProps[];
   $isDisabled?: boolean;
