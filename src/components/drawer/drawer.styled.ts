@@ -18,7 +18,7 @@ export const DrawerWrapper = styled.div<{ $isOpen: boolean }>`
 
 export const CloseDrawerBtnWrapper = styled.div<{ $isOpen: boolean }>`
   position: absolute;
-  top: 43.5%;
+  top: 41%;
   right: -12px;
   background-color: ${({ theme }) => theme.colors["inverse"]};
   transition: transform 0.3s ease-in-out;

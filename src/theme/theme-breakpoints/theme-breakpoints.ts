@@ -4,3 +4,5 @@ export const ThemeBreakpoints = {
   desktop: 1024,
   widescreen: 1440,
 };
+
+export type BreakpointDevices = keyof typeof ThemeBreakpoints;
