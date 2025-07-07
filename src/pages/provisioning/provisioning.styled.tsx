@@ -21,4 +21,5 @@ export const ContentContainer = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing.GUTTER}px;
   padding-left: ${({ theme }) => theme.spacing.GUTTER}px;
   padding-right: ${({ theme }) => theme.spacing.GUTTER * 1.75}px;
+  margin-bottom: ${({ theme }) => theme.spacing.GUTTER * 2}px;
 `;

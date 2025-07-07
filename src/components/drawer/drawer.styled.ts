@@ -23,7 +23,8 @@ export const CloseDrawerBtnWrapper = styled.div<{ $isOpen: boolean }>`
   position: absolute;
   top: 41%;
   right: -12px;
-  background-color: ${({ theme }) => theme.colors["inverse"]};
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors["surface-0"]};
   transition: transform 0.3s ease-in-out;
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
 `;
