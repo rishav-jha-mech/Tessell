@@ -50,6 +50,7 @@ const DropdownStory = () => {
       <Text $renderAs="headingLg">DropDown</Text>
       <Dropdown
         $label="Select Fruit"
+        $size="default"
         $placeholder="Choose one"
         $options={options}
         $value={selected}
