@@ -1,5 +1,5 @@
 import type { ColorKeys } from "../theme-colors/theme-colors";
-import type { IconButtonThemeType } from "../theme-icon-button/theme-icon-button-types";
+import type { ThemeIconButtonType } from "../theme-icon-button/theme-icon-button-types";
 import type { TextVariant } from "../theme-text/theme-text";
 
 type ButtonState = {
@@ -26,7 +26,7 @@ type ButtonSize = {
   radius: number;
   minWidth: number;
   iconStyle: {
-    variant: keyof IconButtonThemeType["sizes"];
+    variant: keyof ThemeIconButtonType["sizes"];
     iconSize: number;
   };
 };

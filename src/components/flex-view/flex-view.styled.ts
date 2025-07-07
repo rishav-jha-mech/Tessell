@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const FlexContainer = styled.div<FlexViewProps>`
   display: flex;
-  background-color: ${({ $background = "opacity-transparent", theme }) =>
-    theme.colors[$background]};
+  background-color: ${({ background = "opacity-transparent", theme }) =>
+    theme.colors[background]};
   flex-direction: ${({ $direction = "row" }) => $direction};
   justify-content: ${({ $justifyContent = "flex-start" }) => $justifyContent};
   align-items: ${({ $alignItems = "stretch" }) => $alignItems};

@@ -5,7 +5,7 @@ import FlexView from "../flex-view/flex-view";
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   return (
-    <FlexView $flex={1} $direction="row" $align="center">
+    <FlexView $flex={1} $direction="row" $alignItems="center">
       {items.map((item, index) => (
         <React.Fragment key={index}>
           <Text $renderAs="bodyXs" $color="subtlest">

@@ -141,7 +141,7 @@ export const AllButtons: Story = {
               />
             </FlexView>
             <Separator height={20} />
-            <Separator height={2} $background="primary" width={"100%"} />
+            <Separator height={2} background="primary" width={"100%"} />
           </div>
         ))}
       </FlexView>

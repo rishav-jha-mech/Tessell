@@ -26,14 +26,14 @@ export const Default: Story = {
         label: "Service Details",
         isCompleted: true,
         children: (
-          <FlexView $direction="row" $align="center" $wrap="wrap" $gap={6}>
+          <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
             <FlexView $gap={6}>
               <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
                 Oracle_service
               </Text>
               <AppIcons.OracleLogo />
             </FlexView>
-            <Separator height={10} width={1} $background="surface-300" />
+            <Separator height={10} width={1} background="surface-300" />
             <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
               oracle_para_profile
             </Text>
@@ -44,14 +44,14 @@ export const Default: Story = {
         label: "Additional Setting",
         isCompleted: false,
         children: (
-          <FlexView $direction="row" $align="center" $wrap="wrap" $gap={6}>
+          <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
             <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
               No Preference
             </Text>
             <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
               Enabled minor version update
             </Text>
-            <Separator height={10} width={1} $background="surface-300" />
+            <Separator height={10} width={1} background="surface-300" />
             <FlexView $gap={6}>
               <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
                 7-day PITR
@@ -60,7 +60,7 @@ export const Default: Story = {
                 01:00 snapshot time
               </Text>
             </FlexView>
-            <Separator height={10} width={1} $background="surface-300" />
+            <Separator height={10} width={1} background="surface-300" />
           </FlexView>
         ),
       },
@@ -68,7 +68,7 @@ export const Default: Story = {
         label: "Review & Submit",
         isCompleted: false,
         children: (
-          <FlexView $direction="row" $align="center" $wrap="wrap" $gap={6}>
+          <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
             <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
               Time for review, submit and deploy 🚀
             </Text>

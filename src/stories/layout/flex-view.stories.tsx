@@ -11,8 +11,8 @@ const meta: Meta<typeof FlexView> = {
   args: {
     $direction: "row",
     $gap: 20,
-    $justify: "flex-start",
-    $align: "center",
+    $justifyContent: "flex-start",
+    $alignItems: "center",
     $wrap: "nowrap",
   },
   argTypes: {
@@ -20,7 +20,7 @@ const meta: Meta<typeof FlexView> = {
       control: "radio",
       options: ["row", "column"],
     },
-    $justify: {
+    $justifyContent: {
       control: "select",
       options: [
         "flex-start",
@@ -31,7 +31,7 @@ const meta: Meta<typeof FlexView> = {
         "space-evenly",
       ],
     },
-    $align: {
+    $alignItems: {
       control: "select",
       options: ["stretch", "flex-start", "flex-end", "center", "baseline"],
     },
@@ -42,7 +42,7 @@ const meta: Meta<typeof FlexView> = {
     $gap: {
       control: "number",
     },
-    $background: {
+    background: {
       control: "select",
       options: Object.keys(ThemeColors),
     },

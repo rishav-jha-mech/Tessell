@@ -95,6 +95,7 @@ export const ThemeText = {
     fontSize: "15px",
     lineHeight: "22px",
     letterSpacing: "-0.1px",
+    verticalAlign: "middle"
   },
   ["heading/form titles"]: {
     fontFamily: "Inter, monospace",
@@ -102,6 +103,8 @@ export const ThemeText = {
     fontWeight: fontWeights.semibold,
     fontSize: "12px",
     lineHeight: "16px",
+    letterSpacing: "0px",
+    verticalAlign: "middle",
   },
 };
 

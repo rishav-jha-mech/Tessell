@@ -37,11 +37,11 @@ const Alert: React.FC<AlertProps> = ({
 
   return (
     <FlexView
-      $background={backgroundColor}
+      background={backgroundColor}
       $gap={8}
       height={"40px"}
       $borderRadius={4}
-      $align="center"
+      $alignItems="center"
       $paddingHorizontal={8}
     >
       {Icon && <Icon color={iconColor} height={20} width={20} />}
