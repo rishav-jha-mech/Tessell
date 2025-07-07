@@ -15,6 +15,8 @@ const Drawer: React.FC<DrawerProps> = ({
   dropdown,
   menuOptions,
   footerOptions,
+  isOpen,
+  toggleDrawer,
 }) => {
   const {
     spacing: { GUTTER },
@@ -36,7 +38,7 @@ const Drawer: React.FC<DrawerProps> = ({
               </Text>
             ),
             onClick: onClick,
-            $marginBottom: 14,
+            $marginBottom: 8,
           } as ButtonProps)
       ),
     [menuOptions]
@@ -65,7 +67,7 @@ const Drawer: React.FC<DrawerProps> = ({
   );
 
   return (
-    <S.DrawerWrapper>
+    <S.DrawerWrapper $isOpen={isOpen}>
       <FlexView $direction="column" $flex={1}>
         <DrawerHeader />
         <Separator $height={11} />
@@ -95,9 +97,9 @@ const Drawer: React.FC<DrawerProps> = ({
         {footerBtns.map((btnOptions, index) => (
           <Button key={index} {...btnOptions} />
         ))}
-        <Separator $height={18} />
+        <Separator $height={12} />
       </FlexView>
-      <S.CloseDrawerBtnWrapper>
+      <S.CloseDrawerBtnWrapper $isOpen={isOpen}>
         <IconButton
           $iconName="ChevronLeft"
           $borderless={false}
@@ -106,6 +108,7 @@ const Drawer: React.FC<DrawerProps> = ({
           $iconColor="text-100"
           $variant="intense"
           $rounded={true}
+          onClick={toggleDrawer}
         />
       </S.CloseDrawerBtnWrapper>
     </S.DrawerWrapper>

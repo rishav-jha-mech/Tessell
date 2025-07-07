@@ -9,6 +9,8 @@ export type DrawerBtnProps = Pick<
 };
 
 export interface DrawerProps {
+  isOpen: boolean;
+  toggleDrawer: () => void;
   dropdown: {
     selected: string | undefined;
     options: DropdownItemProps[];
