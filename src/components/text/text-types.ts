@@ -6,6 +6,7 @@ export type TextProps = {
   $renderAs: TextVariant;
   $color?: ColorKeys | 'inherit';
   $displayAs?: React.CSSProperties["display"];
+  $textAlign?: React.CSSProperties["textAlign"];
   $userSelect?: React.CSSProperties["userSelect"];
   $marginHorizontal?: React.CSSProperties["margin"];
   $marginVertical?: React.CSSProperties["margin"];

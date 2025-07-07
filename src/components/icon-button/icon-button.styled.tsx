@@ -8,20 +8,25 @@ export const IconButtonBase = styled.button<
 >`
   ${({ theme, $variant, $size, disabled }) => {
     const variant = theme.iconButton.variants[$variant];
-    const { iconSize, iconRadius } = theme.iconButton.sizes[$size];
+    const { iconSize,buttonSize, buttonRadius } = theme.iconButton.sizes[$size];
 
     return css`
-      height: ${iconSize}px;
-      width: ${iconSize}px;
+      height: ${buttonSize}px;
+      width: ${buttonSize}px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: ${iconRadius}px;
+      border-radius: ${buttonRadius}px;
       background: transparent;
       cursor: ${disabled ? "not-allowed" : "pointer"};
       transition: color 0.2s ease;
       border: none;
       padding: 0;
+
+      svg {
+        height: ${iconSize}px;
+        width: ${iconSize}px;
+      }
 
       &:hover {
         color: ${!disabled &&

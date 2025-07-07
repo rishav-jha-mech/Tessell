@@ -17,7 +17,8 @@ export type IconButtonVariantStates = {
 
 export type IconButtonStyle = {
   iconSize: number;
-  iconRadius: number;
+  buttonRadius: number;
+  buttonSize: number;
 };
 
 export type IconButtonThemeType = {

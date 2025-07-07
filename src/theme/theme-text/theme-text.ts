@@ -73,9 +73,20 @@ export const ThemeText = {
   ["Text-body/secondary/secondary"]: {
     fontFamily: "Inter, sans-serif",
     fontStyle: "normal",
-    fontWeight: 400,
+    fontWeight: fontWeights.normal,
     fontSize: "11px",
     lineHeight: "16px",
+    letterSpacing: "0px",
+    verticalAlign: "middle",
+  },
+  ["Text-body/primary/primary"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: fontWeights.normal,
+    fontSize: "13px",
+    lineHeight: "20px",
+    letterSpacing: "0px",
+    verticalAlign: "middle",
   },
 };
 

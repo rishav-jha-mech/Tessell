@@ -29,6 +29,7 @@ export const TextBase = styled.span<StyledTextProps>`
       display: ${$displayAs};
       user-select: ${$userSelect};
       margin: ${$marginVertical || "0"} ${$marginHorizontal || "0"};
+      text-align: ${$displayAs === "inline" ? "inherit" : "left"};
     `;
   }}
 `;

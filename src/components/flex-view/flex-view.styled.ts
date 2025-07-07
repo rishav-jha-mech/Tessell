@@ -12,7 +12,8 @@ export const FlexContainer = styled.div<FlexViewProps>`
   gap: ${({ $gap = 0 }) => `${$gap}px`};
   flex: ${({ $flex = "none" }) => $flex};
   border-radius: ${({ $borderRadius = 0 }) => `${$borderRadius}px`};
-  height: ${({ $height = "auto" }) => $height};
+  height: ${({ $height = "auto" }) =>
+    typeof $height === "number" ? `${$height}px` : $height};
   padding: ${({ $paddingHorizontal = 0, $paddingVertical = 0 }) =>
     `${$paddingVertical}px ${$paddingHorizontal}px`};
 `;
