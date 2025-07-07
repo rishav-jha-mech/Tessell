@@ -1,9 +1,12 @@
 import { useCallback, useMemo, useState } from "react";
 import type { DropdownItemProps } from "../../components/dropdown/dropdown-types";
 import type { DrawerBtnProps } from "../../components/drawer/drawer-types";
+import { BreakpointDevices } from "../../theme/constants/breakpoints-devices";
 
 export const useDrawer = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(
+    window.innerWidth > BreakpointDevices.tablet
+  );
   const [selectedOption, setSelectedOption] = useState("dbservices");
 
   const toggleDrawer = useCallback(() => setIsDrawerOpen((prev) => !prev), []);

@@ -1,11 +1,12 @@
 import { useTheme } from "styled-components";
 import Breadcrumbs from "../breadcrumbs/breadcrumbs";
-import FlexView from "../flex-view/flex-view";
 import type { HeaderProps } from "./header-props";
 import { Text } from "../text/text";
 import Separator from "../separator/separator";
 import { IconButton } from "../icon-button/icon-button";
 import Avatar from "../avatar/avatar";
+import * as S from "./header.styled";
+
 /**
  * There is a static part to the header, that doesn't change.
  * The left part where we show Breadcrums is dynamic, it changes from page to page.
@@ -18,20 +19,13 @@ const Header: React.FC<HeaderProps> = ({
   backgroundColor,
 }) => {
   const {
-    spacing: { GAP, GUTTER },
+    spacing: { GUTTER },
   } = useTheme();
 
   return (
-    <FlexView
-      $direction="row"
-      $alignItems="center"
-      $justifyContent="space-between"
-      $paddingHorizontal={GAP}
-      height={GUTTER * 3}
-      background={backgroundColor ?? "opacity-transparent"}
-    >
+    <S.HeaderWrapper background={backgroundColor ?? "opacity-transparent"}>
       <Breadcrumbs items={breadcrumbs} />
-      <FlexView $direction="row" $alignItems="center" $gap={GUTTER / 2}>
+      <S.HeaderIconContent $gap={GUTTER / 2}>
         <Text
           $renderAs="Text-body/primary/primary"
           $marginHorizontal={GUTTER / 2}
@@ -57,9 +51,10 @@ const Header: React.FC<HeaderProps> = ({
           $size="large"
           $variant="intense"
         />
-        <Avatar $size="small" alt="User Avatar" src={userAvatarSrc} />
-      </FlexView>
-    </FlexView>
+      </S.HeaderIconContent>
+      <Separator widthX={0.5} />
+      <Avatar $size="small" alt="User Avatar" src={userAvatarSrc} />
+    </S.HeaderWrapper>
   );
 };
 

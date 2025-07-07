@@ -25,7 +25,6 @@ export const CreateServiceSectionWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors["surface-0"]};
   border-radius: 4px;
   width: 100%;
-  max-width: 100%;
 
   ${MediaQuery.minWidthWidescreen} {
     max-width: 380px;
