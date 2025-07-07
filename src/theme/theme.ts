@@ -1,4 +1,3 @@
-import { ThemeBreakpoints } from "./theme-breakpoints/theme-breakpoints";
 import { ThemeButtons } from "./theme-buttons/theme-buttons";
 import { ThemeCheckbox } from "./theme-checkbox/theme-checkbox";
 import { ThemeColors } from "./theme-colors/theme-colors";
@@ -17,7 +16,6 @@ export const AppDefaultTheme = {
   checkbox: ThemeCheckbox,
   radio: ThemeRadio,
   spacing: ThemeSpacing,
-  breakpoints: ThemeBreakpoints,
 };
 
 export type AppTheme = typeof AppDefaultTheme;

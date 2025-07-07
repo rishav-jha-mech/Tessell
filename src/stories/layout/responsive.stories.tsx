@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import styled from "styled-components";
-import { respondTo } from "../../utils/respond-to";
 import Separator from "../../components/separator/separator";
 import FlexView from "../../components/flex-view/flex-view";
 import { Text } from "../../components/text/text";
 import { useCurrentBreakpoint } from "../../hooks/use-current-breakpoints";
+import { MediaQuery } from "../../theme/constants/media-query";
 
 const SizedBox = styled(Separator)`
   height: 600px;
@@ -12,29 +12,29 @@ const SizedBox = styled(Separator)`
 
   transition: background-color 0.3s ease-in-out;
 
-  ${respondTo.mobile`
+  ${MediaQuery.minWidthMobileOnly} {
     height: 300px;
     width: 300px;
-    background-color: ${(props) => props.theme.colors["opacity-danger"]}; 
-    `}
+    background-color: ${(props) => props.theme.colors["opacity-danger"]};
+  }
 
-  ${respondTo.tablet`
+  ${MediaQuery.minWidthTablet} {
     height: 400px;
     width: 400px;
-    background-color: ${(props) => props.theme.colors["opacity-warning"]}; 
-    `}
-    
-  ${respondTo.desktop`
+    background-color: ${(props) => props.theme.colors["opacity-warning"]};
+  }
+
+  ${MediaQuery.minWidthDesktop} {
     height: 500px;
     width: 500px;
     background-color: ${(props) => props.theme.colors["opacity-success"]};
-    `}
-    
-  ${respondTo.widescreen`
+  }
+
+  ${MediaQuery.minWidthWidescreen} {
     height: 600px;
     width: 600px;
     background-color: ${(props) => props.theme.colors["opacity-primary"]};
-    `}
+  }
 `;
 
 const ResponsiveExample: React.FC = () => {

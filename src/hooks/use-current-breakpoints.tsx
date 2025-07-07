@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { ThemeBreakpoints } from "../theme/theme-breakpoints/theme-breakpoints";
+import { BreakpointDevices } from "../theme/constants/breakpoints-devices";
 
 export const useCurrentBreakpoint = () => {
   const [breakpoint, setBreakpoint] = useState("mobile");
 
   const getBreakpoint = (width: number) => {
-    if (width >= ThemeBreakpoints.widescreen) return "widescreen";
-    if (width >= ThemeBreakpoints.desktop) return "desktop";
-    if (width >= ThemeBreakpoints.tablet) return "tablet";
+    if (width >= BreakpointDevices.widescreen) return "widescreen";
+    if (width >= BreakpointDevices.desktop) return "desktop";
+    if (width >= BreakpointDevices.tablet) return "tablet";
     return "mobile";
   };
 
