@@ -1,7 +1,7 @@
 const fontWeights = {
-  normal: 500,
-  medium: 600,
-  semibold: 700,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
 };
 
 export const ThemeText = {
@@ -94,6 +94,15 @@ export const ThemeText = {
     fontWeight: fontWeights.medium,
     fontSize: "15px",
     lineHeight: "22px",
+    letterSpacing: "-0.1px",
+    verticalAlign: "middle",
+  },
+  ["heading/secondary"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: fontWeights.medium,
+    fontSize: "13px",
+    lineHeight: "20px",
     letterSpacing: "-0.1px",
     verticalAlign: "middle",
   },

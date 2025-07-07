@@ -8,6 +8,7 @@ import { useDrawerContext } from "../../context/drawer-context/use-drawer-contex
 import * as S from "./provisioning.styled";
 import StepsSection from "./comps/steps-section/steps-section";
 import ServiceDetailsSection from "./comps/service-details-section/service-details-section";
+import AdditionalSettingsSection from "./comps/additional-settings-section/additional-settings-section";
 
 const Provisioning = () => {
   const { toggleDrawer } = useDrawerContext();
@@ -62,7 +63,7 @@ const Provisioning = () => {
             <ServiceDetailsSection />
           </S.ContentContainer>
           <S.ContentContainer>
-            <ServiceDetailsSection />
+            <AdditionalSettingsSection />
           </S.ContentContainer>
         </FlexView>
       </FlexView>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DRAWER_WIDTH } from "./drawer-constants";
 
 export const DrawerWrapper = styled.div<{ $isOpen: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;

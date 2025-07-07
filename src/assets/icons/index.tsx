@@ -14,6 +14,8 @@ import CheckboxCheck from "./checkbox-check.svg?react";
 import CheckboxMinus from "./checkbox-minus.svg?react";
 import CirclePlus from "./circle-plus.svg?react";
 import Cloud from "./cloud.svg?react";
+import Calendar from "./calendar.svg?react";
+import Clock from "./clock.svg?react";
 import CmdE from "./cmd-e.svg?react";
 import DataFlix from "./data-flix.svg?react";
 import Drawer from "./drawer.svg?react";
@@ -36,8 +38,10 @@ export const AppIcons = {
   Bell,
   Benchmarks,
   Book,
+  Calendar,
   Code,
   Close,
+  Clock,
   Check,
   Chart,
   CheckboxCheck,

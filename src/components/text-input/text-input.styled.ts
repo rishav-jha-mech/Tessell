@@ -10,6 +10,7 @@ export const InputWrapper = styled.div<{
 }>`
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: ${({ $maxWidth = "100%" }) => $maxWidth};
   margin-bottom: ${({ $marginBottomX = 0, theme }) =>
     $marginBottomX * theme.spacing.GUTTER}px;
@@ -144,6 +145,20 @@ export const TextInputBase = styled.input<TextInputProps>`
       }
 
       transition: all 0.2s ease;
+
+      &[type="date"],
+      &[type="time"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+      }
+
+      &[type="date"]::-webkit-calendar-picker-indicator,
+      &[type="time"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+      }
     `;
   }}
 `;
