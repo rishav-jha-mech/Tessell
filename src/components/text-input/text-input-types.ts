@@ -17,4 +17,5 @@ export interface TextInputProps
   $isDisabled?: boolean;
   $marginBottom?: number;
   $cursor?: React.CSSProperties["cursor"];
+  $maxWidth?: React.CSSProperties["maxWidth"];
 }

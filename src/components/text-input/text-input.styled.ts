@@ -6,16 +6,19 @@ export const InputWrapper = styled.div<{
   $disabled?: boolean;
   $focused?: boolean;
   $marginBottom?: number;
+  $maxWidth?: React.CSSProperties["maxWidth"];
 }>`
   display: flex;
   flex-direction: column;
+  max-width: ${({ $maxWidth = "100%" }) => $maxWidth};
   margin-bottom: ${({ $marginBottom = 16 }) => $marginBottom}px;
 `;
 
-export const TextInputBaseWrapper = styled.div`
+export const TextInputBaseWrapper = styled.div<{ $height: number }>`
   display: flex;
   position: relative;
   width: 100%;
+  height: ${({ $height }) => $height}px;
 `;
 
 export const LeadingItemWrapper = styled.div<{
@@ -98,8 +101,6 @@ export const TextInputBase = styled.input<TextInputProps>`
       flex: 1;
       padding-left: ${paddingLeft}px;
       padding-right: ${paddingRight}px;
-      padding-top: ${size.paddingY}px;
-      padding-bottom: ${size.paddingY}px;
 
       background: ${background};
       border: 1px solid ${borderColor};

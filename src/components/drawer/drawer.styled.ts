@@ -8,7 +8,6 @@ export const DrawerWrapper = styled.div<{ $isOpen: boolean }>`
   bottom: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: ${DRAWER_WIDTH}px;
 
   transition: transform 0.3s ease-in-out;

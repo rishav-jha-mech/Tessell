@@ -21,7 +21,7 @@ export type TextInputStates = {
 
 export type TextInputSize = {
   paddingX: number;
-  paddingY: number;
+  height: number;
   textVariant: TextVariant;
   borderRadius: number;
 };

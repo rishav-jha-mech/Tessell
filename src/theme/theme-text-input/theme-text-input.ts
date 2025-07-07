@@ -32,14 +32,14 @@ export const ThemeTextInput: ThemeTextInputType = {
   sizes: {
     small: {
       paddingX: 8,
-      paddingY: 8,
-      textVariant: "bodySecondary",
+      height: 32,
+      textVariant: "Text-body/secondary/secondary",
       borderRadius: 4,
     },
     default: {
       paddingX: 12,
-      paddingY: 8,
-      textVariant: "bodyPrimary",
+      height: 36,
+      textVariant: "Text-body/primary/primary",
       borderRadius: 4,
     },
   },

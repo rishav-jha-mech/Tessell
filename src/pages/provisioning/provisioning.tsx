@@ -6,58 +6,67 @@ import Header from "../../components/header/header";
 import Separator from "../../components/separator/separator";
 import { useDrawerContext } from "../../context/drawer-context/use-drawer-context";
 import * as S from "./provisioning.styled";
-import CreateServiceSection from "./comps/create-service-section/create-service-section";
+import StepsSection from "./comps/steps-section/steps-section";
+import ServiceDetailsSection from "./comps/service-details-section/service-details-section";
 
 const Provisioning = () => {
   const { toggleDrawer } = useDrawerContext();
   const {
-    spacing: { GUTTER, GAP, PAGE_PADDING },
+    spacing: { PAGE_PADDING },
   } = useTheme();
 
   return (
-    <FlexView>
-      <S.ContentWrapper>
-        <Header
-          credits={777}
-          userAvatarSrc={
-            "https://i.pinimg.com/236x/8c/52/14/8c5214d30329d77c9564ab31fd9d0579.jpg"
-          }
-          breadcrumbs={[
-            { label: "Provisioning" },
-            { label: "Relational Databases" },
-            { label: "Oracle Server" },
-          ]}
-          backgroundColor="inverse"
-        />
-        <HeaderTitle
-          title="Create New Oracle Database Service"
-          backgroundColor="inverse"
-          trailingItem={
-            <Button
-              $icon="Code"
-              $size="small"
-              $isSelected={true}
-              $type="tertiary"
-              $isHorizontallyCentered={true}
-              onClick={() => {}}
-            >
-              Code
-            </Button>
-          }
-          onDismiss={toggleDrawer}
-        />
-        <Separator heightX={1.5} />
-        <FlexView
-          $paddingHorizontal={PAGE_PADDING}
-          $alignItems="flex-start"
-          $justifyContent="space-between"
-        >
-          <S.CreateServiceSectionWrapper>
-            <CreateServiceSection />
-          </S.CreateServiceSectionWrapper>
+    <S.ContentWrapper>
+      <Header
+        credits={777}
+        userAvatarSrc={
+          "https://i.pinimg.com/236x/8c/52/14/8c5214d30329d77c9564ab31fd9d0579.jpg"
+        }
+        breadcrumbs={[
+          { label: "Provisioning" },
+          { label: "Relational Databases" },
+          { label: "Oracle Server" },
+        ]}
+        backgroundColor="inverse"
+      />
+      <HeaderTitle
+        title="Create New Oracle Database Service"
+        backgroundColor="inverse"
+        trailingItem={
+          <Button
+            $icon="Code"
+            $size="small"
+            $isSelected={true}
+            $type="tertiary"
+            $isHorizontallyCentered={true}
+            onClick={() => {}}
+          >
+            Code
+          </Button>
+        }
+        onDismiss={toggleDrawer}
+      />
+      <Separator heightX={1.5} />
+      <FlexView
+        $flex={1}
+        $gapX={1}
+        $paddingHorizontal={PAGE_PADDING}
+        $alignItems="flex-start"
+        $justifyContent="space-between"
+      >
+        <S.CreateServiceSectionWrapper>
+          <StepsSection />
+        </S.CreateServiceSectionWrapper>
+        <FlexView $flex={1} $gap={16} $direction="column">
+          <S.ContentContainer>
+            <ServiceDetailsSection />
+          </S.ContentContainer>
+          <S.ContentContainer>
+            <ServiceDetailsSection />
+          </S.ContentContainer>
         </FlexView>
-      </S.ContentWrapper>
-    </FlexView>
+      </FlexView>
+    </S.ContentWrapper>
   );
 };
 

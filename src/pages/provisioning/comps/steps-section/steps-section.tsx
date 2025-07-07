@@ -4,10 +4,10 @@ import FlexView from "../../../../components/flex-view/flex-view";
 import Separator from "../../../../components/separator/separator";
 import Stepper from "../../../../components/stepper/stepper";
 import { Text } from "../../../../components/text/text";
-import * as S from "./create-service-section.styled";
+import * as S from "./steps-section.styled";
 import { Button } from "../../../../components/button/button";
 
-const CreateServiceSection = () => {
+const StepsSection = () => {
   const steps = [
     {
       label: "Service Details",
@@ -96,4 +96,4 @@ const CreateServiceSection = () => {
   );
 };
 
-export default CreateServiceSection;
+export default StepsSection;
