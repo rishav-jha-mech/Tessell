@@ -1,7 +1,7 @@
-import { AppIcons } from "./assets/icons";
+import Provisioning from "./pages/provisioning/provisioning";
 
 function App() {
-  return <AppIcons.TessellLogo />;
+  return <Provisioning />;
 }
 
 export default App;

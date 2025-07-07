@@ -15,6 +15,7 @@ const Header: React.FC<HeaderProps> = ({
   breadcrumbs,
   credits,
   userAvatarSrc,
+  backgroundColor,
 }) => {
   const {
     spacing: { GAP, GUTTER },
@@ -27,6 +28,7 @@ const Header: React.FC<HeaderProps> = ({
       $justifyContent="space-between"
       $paddingHorizontal={GAP}
       height={GUTTER * 3}
+      background={backgroundColor ?? "opacity-transparent"}
     >
       <Breadcrumbs items={breadcrumbs} />
       <FlexView $direction="row" $alignItems="center" $gap={GUTTER / 2}>
@@ -55,11 +57,7 @@ const Header: React.FC<HeaderProps> = ({
           $size="large"
           $variant="intense"
         />
-        <Avatar
-          $size="small"
-          alt="User Avatar"
-          src={userAvatarSrc}
-        />
+        <Avatar $size="small" alt="User Avatar" src={userAvatarSrc} />
       </FlexView>
     </FlexView>
   );

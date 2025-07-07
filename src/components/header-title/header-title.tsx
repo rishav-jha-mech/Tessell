@@ -8,6 +8,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({
   title,
   onDismiss,
   trailingItem,
+  backgroundColor,
 }) => {
   const {
     spacing: { GAP, GUTTER },
@@ -20,6 +21,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({
       $paddingHorizontal={GAP}
       height={GUTTER * 3}
       $borderTopWidth={1}
+      background={backgroundColor ?? "opacity-transparent"}
     >
       <FlexView $flex={1}>
         <Text $renderAs="heading/primary">{title}</Text>

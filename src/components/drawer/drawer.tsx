@@ -83,12 +83,14 @@ const Drawer: React.FC<DrawerProps> = ({
           </Text>
         </Button>
         <Separator height={GUTTER / 2} />
-        <Dropdown
-          $options={dropdown.options}
-          $placeholder="Select an option"
-          $value={dropdown.selected}
-          onChange={dropdown.handleChange}
-        />
+        {dropdown && (
+          <Dropdown
+            $options={dropdown.options}
+            $placeholder="Select an option"
+            $value={dropdown.selected}
+            onChange={dropdown.handleChange}
+          />
+        )}
         <Separator height={GUTTER / 2} />
         {menuBtns.map((btnOptions, index) => (
           <Button key={index} {...btnOptions} />

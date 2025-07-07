@@ -22,6 +22,7 @@ type ButtonStates = {
 
 type ButtonSize = {
   padding: string;
+  height: number;
   textRenderAs: TextVariant;
   radius: number;
   minWidth: number;

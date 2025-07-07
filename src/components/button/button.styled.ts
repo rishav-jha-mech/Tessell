@@ -62,7 +62,7 @@ export const ButtonBase = styled.button<
       align-items: center;
       justify-content: ${$isHorizontallyCentered ? "center" : "flex-start"};
 
-      height: ${$iconOnly ? `${IconStyle.iconSize}px` : "auto"};
+      height: ${$iconOnly ? IconStyle.iconSize : size.height}px;
       width: ${$isFullWidth
         ? "100%"
         : $iconOnly

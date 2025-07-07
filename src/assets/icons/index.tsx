@@ -4,6 +4,7 @@ import AvailabilityMachines from "./availability-machines.svg?react";
 import Bell from "./bell.svg?react";
 import Benchmarks from "./benchmarks.svg?react";
 import Book from "./book.svg?react";
+import Code from "./code.svg?react";
 import Close from "./close.svg?react";
 import ChevronDown from "./chevron-down.svg?react";
 import ChevronLeft from "./chevron-left.svg?react";
@@ -34,6 +35,7 @@ export const AppIcons = {
   Bell,
   Benchmarks,
   Book,
+  Code,
   Close,
   Chart,
   CheckboxCheck,

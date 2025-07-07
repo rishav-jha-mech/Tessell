@@ -51,7 +51,8 @@ export const ThemeButtons: ThemeButtonsType = {
   },
   sizes: {
     small: {
-      padding: "8px 12px",
+      padding: "0 12px",
+      height: 32,
       textRenderAs: "bodySecondary",
       radius: 4,
       minWidth: 104,
@@ -61,7 +62,8 @@ export const ThemeButtons: ThemeButtonsType = {
       },
     },
     regular: {
-      padding: "8px 12px",
+      padding: "0 12px",
+      height: 36,
       textRenderAs: "bodyPrimary",
       radius: 4,
       minWidth: 119,
@@ -71,7 +73,8 @@ export const ThemeButtons: ThemeButtonsType = {
       },
     },
     large: {
-      padding: "10px 12px",
+      padding: "0 12px",
+      height: 40,
       textRenderAs: "bodyPrimary",
       radius: 4,
       minWidth: 119,
