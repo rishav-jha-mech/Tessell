@@ -5,6 +5,8 @@ import type { TextVariant } from "../theme-text/theme-text";
 type ButtonState = {
   background: ColorKeys;
   color: ColorKeys;
+  iconMarginRight?: number;
+  selectedColor: ColorKeys;
 };
 
 type ButtonStates = {
@@ -32,6 +34,7 @@ type ButtonSize = {
 export type ThemeButtonsType = {
   variants: {
     primary: ButtonStates;
+    tertiary: ButtonStates;
   };
   sizes: {
     small: ButtonSize;

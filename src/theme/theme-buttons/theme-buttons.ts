@@ -5,7 +5,9 @@ export const ThemeButtons: ThemeButtonsType = {
     primary: {
       default: {
         background: "primary-200",
+        iconMarginRight: 8,
         color: "inverse",
+        selectedColor: "inverse",
       },
       hover: {
         background: "primary-300",
@@ -21,6 +23,29 @@ export const ThemeButtons: ThemeButtonsType = {
       disabled: {
         background: "surface-secondary",
         color: "disabled",
+        selectedColor: "disabled",
+      },
+    },
+    tertiary: {
+      default: {
+        background: "inverse",
+        color: "subtler",
+        iconMarginRight: 10,
+        selectedColor: "primary-200",
+      },
+      hover: {
+        background: "inverse",
+        color: "primary-200",
+      },
+      focus: {
+        outlineColor: "border-focus",
+        outlineWidth: 4,
+        outlineBorderRadius: 4,
+      },
+      disabled: {
+        background: "inverse",
+        color: "subtlest",
+        selectedColor: "subtlest",
       },
     },
   },

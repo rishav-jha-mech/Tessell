@@ -3,19 +3,38 @@ import type { ButtonProps } from "./button-types";
 
 export const ButtonBase = styled.button<
   Required<
-    Pick<ButtonProps, "$type" | "$size" | "$isFullWidth" | "$iconOnly">
+    Pick<
+      ButtonProps,
+      | "$type"
+      | "$size"
+      | "$isFullWidth"
+      | "$iconOnly"
+      | "$isSelected"
+      | "$isHorizontallyCentered"
+    >
   > & {
     disabled?: boolean;
   }
 >`
-  ${({ theme, $type, $size, $isFullWidth, $iconOnly, disabled }) => {
+  ${({
+    theme,
+    $type,
+    $size,
+    $isFullWidth,
+    $iconOnly,
+    $isSelected,
+    disabled,
+  }) => {
     const variant = theme.buttons.variants[$type];
     const size = theme.buttons.sizes[$size];
     const IconStyle = size.iconStyle;
     const textVariant = theme.text[size.textRenderAs];
 
     const defaultBg = theme.colors[variant.default.background];
-    const defaultFg = theme.colors[variant.default.color];
+    const defaultFg = $isSelected
+      ? theme.colors[variant.default.selectedColor]
+      : theme.colors[variant.default.color];
+
     const hoverBg = variant.hover?.background
       ? theme.colors[variant.hover.background]
       : defaultBg;
@@ -41,9 +60,11 @@ export const ButtonBase = styled.button<
       justify-content: center;
 
       height: ${$iconOnly ? `${IconStyle.iconSize}px` : "auto"};
-      width: ${
-        $isFullWidth ? "100%" : $iconOnly ? `${IconStyle.iconSize}px` : "auto"
-      };
+      width: ${$isFullWidth
+        ? "100%"
+        : $iconOnly
+        ? `${IconStyle.iconSize}px`
+        : "auto"};
       min-width: ${$iconOnly ? "0" : `${size.minWidth}px`};
       padding: ${$iconOnly ? "0" : size.padding};
       border: none;

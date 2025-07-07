@@ -13,11 +13,16 @@ export const Button: React.FC<ButtonProps> = ({
   $isFullWidth = false,
   $iconOnly = false,
   $isLoading = false,
+  $isSelected = false,
+  $isHorizontallyCentered = true,
   ...rest
 }) => {
-  const { iconButton } = useTheme();
+  const { iconButton, buttons } = useTheme();
   const Icon = AppIcons[$icon];
   const { iconSize } = iconButton.sizes[$size];
+  const {
+    default: { iconMarginRight },
+  } = buttons.variants[$type];
 
   return (
     <S.ButtonBase
@@ -25,6 +30,8 @@ export const Button: React.FC<ButtonProps> = ({
       $size={$size}
       $isFullWidth={$isFullWidth}
       $iconOnly={$iconOnly}
+      $isSelected={$isSelected}
+      $isHorizontallyCentered={$isHorizontallyCentered}
       disabled={rest.disabled || $isLoading}
       {...rest}
     >
@@ -33,7 +40,7 @@ export const Button: React.FC<ButtonProps> = ({
       ) : (
         <>
           <Icon height={iconSize} width={iconSize} />
-          {!$iconOnly && <Separator $width={8} />}
+          {!$iconOnly && <Separator $width={iconMarginRight} />}
           {children}
         </>
       )}

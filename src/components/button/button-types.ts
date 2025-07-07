@@ -9,5 +9,7 @@ export interface ButtonProps
   $isFullWidth?: boolean;
   $iconOnly?: boolean;
   $isLoading?: boolean;
+  $isSelected?: boolean;
+  $isHorizontallyCentered?: boolean;
   children?: string;
 }
