@@ -32,7 +32,6 @@ export const CreateServiceSectionWrapper = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  flex: 1;
   background-color: ${({ theme }) => theme.colors["surface-0"]};
   border-radius: 4px;
   padding-top: ${({ theme }) => theme.spacing.GUTTER}px;

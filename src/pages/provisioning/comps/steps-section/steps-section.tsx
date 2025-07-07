@@ -75,6 +75,8 @@ const StepsSection = () => {
               Estimated Monthly Price*
             </Text>
             <Text
+              as={"a"}
+              href="/"
               $renderAs="Text-body/secondary/secondary"
               $color="primary-200"
             >
