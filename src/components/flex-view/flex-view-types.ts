@@ -4,6 +4,7 @@ export interface FlexViewProps extends React.HTMLAttributes<HTMLDivElement> {
   $gap?: number;
   $flex?: React.CSSProperties["flex"];
   $height?: React.CSSProperties["height"];
+  $width?: React.CSSProperties["width"];
   $paddingHorizontal?: number;
   $paddingVertical?: number;
   $direction?: React.CSSProperties["flexDirection"];
