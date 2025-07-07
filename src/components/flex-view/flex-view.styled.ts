@@ -9,7 +9,6 @@ export const FlexContainer = styled.div<FlexViewProps>`
   justify-content: ${({ $justifyContent = "flex-start" }) => $justifyContent};
   align-items: ${({ $alignItems = "stretch" }) => $alignItems};
   flex-wrap: ${({ $wrap = "nowrap" }) => $wrap};
-  gap: ${({ $gap = 0 }) => `${$gap}px`};
   flex: ${({ $flex = "none" }) => $flex};
   border-radius: ${({ $borderRadius = 0 }) => `${$borderRadius}px`};
   height: ${({ height = "auto" }) =>
@@ -20,4 +19,13 @@ export const FlexContainer = styled.div<FlexViewProps>`
     `${$paddingVertical}px ${$paddingHorizontal}px`};
   border-top: ${({ $borderTopWidth = 0 }) => $borderTopWidth}px solid
     ${({ theme }) => theme.colors["surface-100"]};
+  gap: ${({ $gap = 0, $gapX = 0, theme }) => {
+    if ($gap !== 0) {
+      return `${$gap}px`;
+    }
+    if ($gapX !== 0) {
+      return `${$gapX * theme.spacing.GAP}px`;
+    }
+    return "0px";
+  }};
 `;

@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { DRAWER_WIDTH } from "./drawer-constants";
 
 export const DrawerWrapper = styled.div<{ $isOpen: boolean }>`
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;

@@ -95,16 +95,32 @@ export const ThemeText = {
     fontSize: "15px",
     lineHeight: "22px",
     letterSpacing: "-0.1px",
-    verticalAlign: "middle"
+    verticalAlign: "middle",
   },
   ["heading/form titles"]: {
-    fontFamily: "Inter, monospace",
+    fontFamily: "Inter, sans-serif",
     fontStyle: "normal",
     fontWeight: fontWeights.semibold,
     fontSize: "12px",
     lineHeight: "16px",
     letterSpacing: "0px",
     verticalAlign: "middle",
+  },
+  ["heading/Titles"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: fontWeights.semibold,
+    fontSize: "20px",
+    lineHeight: "24px",
+    letterSpacing: "-0.2px",
+  },
+  ["button/large"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: fontWeights.semibold,
+    fontSize: "16px",
+    lineHeight: "24px",
+    letterSpacing: "0px",
   },
 };
 
