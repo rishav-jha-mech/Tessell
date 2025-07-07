@@ -37,7 +37,7 @@ export const AllButtons: Story = {
     >;
 
     return (
-      <FlexView $gap={20} $direction="column" style={{ width: "60%" }}>
+      <FlexView $gap={20} $direction="column">
         {variants.map((variant) => (
           <div key={variant}>
             <Text $renderAs="headingLg">{variant.toUpperCase()}</Text>
@@ -56,6 +56,15 @@ export const AllButtons: Story = {
                 $isSelected={true}
               >
                 Selected
+              </Button>
+
+              <Button
+                $type={variant}
+                $size="regular"
+                $icon="Add"
+                $trailingIcon="Pin"
+              >
+                Trailing Icon
               </Button>
 
               <Button $type={variant} $size="regular" $icon="Add" disabled>
@@ -81,6 +90,7 @@ export const AllButtons: Story = {
                   {`${variant} ${size}`}
                 </Button>
               ))}
+
               <Button
                 $type={variant}
                 $size="regular"

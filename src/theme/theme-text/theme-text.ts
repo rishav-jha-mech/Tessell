@@ -96,6 +96,13 @@ export const ThemeText = {
     lineHeight: "22px",
     letterSpacing: "-0.1px",
   },
+  ["heading/form titles"]: {
+    fontFamily: "Inter, monospace",
+    fontStyle: "normal",
+    fontWeight: fontWeights.semibold,
+    fontSize: "12px",
+    lineHeight: "16px",
+  },
 };
 
 export type TextVariant = keyof typeof ThemeText;

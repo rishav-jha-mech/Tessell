@@ -9,7 +9,7 @@ export interface DropdownItemProps {
   onClick?: () => void;
 }
 export interface DropdownProps {
-  $label: string;
+  $label?: string;
   $placeholder: string;
   $options: DropdownItemProps[];
   $isDisabled?: boolean;

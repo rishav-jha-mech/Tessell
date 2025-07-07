@@ -41,7 +41,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
     <S.DropdownWrapper ref={dropdownRef} $disabled={$isDisabled}>
       <TextInput
         $label={$label}
-        $size="default"
+        $size="small"
         placeholder={$placeholder}
         value={selectedOption?.label || ""}
         readOnly
@@ -49,14 +49,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
         $helpText={$helpText}
         $trailingItem={
           <S.Caret $isOpen={isOpen}>
-            <AppIcons.ChevronDown />
+            <AppIcons.ChevronDown height={16} width={16} />
           </S.Caret>
         }
         onClick={() => !$isDisabled && setIsOpen(!isOpen)}
       />
 
       {isOpen && (
-        <S.OptionsList>
+        <S.OptionsList helpTextPresent={!!$helpText}>
           {$options.map((opt) => (
             <DropdownItem
               key={opt.value}

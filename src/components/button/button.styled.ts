@@ -11,6 +11,7 @@ export const ButtonBase = styled.button<
       | "$iconOnly"
       | "$isSelected"
       | "$isHorizontallyCentered"
+      | "$marginBottom"
     >
   > & {
     disabled?: boolean;
@@ -23,6 +24,8 @@ export const ButtonBase = styled.button<
     $isFullWidth,
     $iconOnly,
     $isSelected,
+    $isHorizontallyCentered,
+    $marginBottom,
     disabled,
   }) => {
     const variant = theme.buttons.variants[$type];
@@ -57,7 +60,7 @@ export const ButtonBase = styled.button<
     return css`
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      justify-content: ${$isHorizontallyCentered ? "center" : "flex-start"};
 
       height: ${$iconOnly ? `${IconStyle.iconSize}px` : "auto"};
       width: ${$isFullWidth
@@ -79,6 +82,8 @@ export const ButtonBase = styled.button<
       font-size: ${textVariant.fontSize};
       line-height: ${textVariant.lineHeight};
       font-weight: ${textVariant.fontWeight};
+
+      margin-bottom: ${$marginBottom}px;
 
       transition: all 0.2s ease-in-out;
 

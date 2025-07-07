@@ -16,9 +16,10 @@ export const Caret = styled.div<{ $isOpen: boolean }>`
   transition: transform 0.2s ease;
 `;
 
-export const OptionsList = styled.ul`
+export const OptionsList = styled.ul<{ helpTextPresent: boolean }>`
   position: absolute;
-  top: 72px;
+  background-color: ${({ theme }) => theme.colors["inverse"]};
+  top: ${({ helpTextPresent }) => (helpTextPresent ? "72px" : "36px")};
   left: 0;
   right: 0;
   padding: 0 0;

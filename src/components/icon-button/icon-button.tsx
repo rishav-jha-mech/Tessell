@@ -3,23 +3,11 @@ import { AppIcons } from "../../assets/icons";
 import type { IconButtonProps } from "./icon-button-types";
 import * as S from "./icon-button.styled";
 
-export const IconButton: React.FC<IconButtonProps> = ({
-  $iconName,
-  $variant,
-  $size,
-  $isDisabled = false,
-  $ariaLabel,
-  ...rest
-}) => {
+export const IconButton: React.FC<IconButtonProps> = (props) => {
+  const { $iconName } = props;
   const IconComponent = AppIcons[$iconName];
   return (
-    <S.IconButtonBase
-      $variant={$variant}
-      $size={$size}
-      aria-label={$ariaLabel}
-      disabled={$isDisabled}
-      {...rest}
-    >
+    <S.IconButtonBase aria-label={props.$ariaLabel} {...props}>
       <S.IconWrapper>
         <IconComponent />
       </S.IconWrapper>

@@ -7,7 +7,7 @@ export interface TextInputProps
   $variant?: keyof ThemeTextInputType["variants"];
   $size?: keyof ThemeTextInputType["sizes"];
   $isSelected?: boolean;
-  $label: string;
+  $label?: string;
   $helpText?: {
     message: string;
     color: ColorKeys;

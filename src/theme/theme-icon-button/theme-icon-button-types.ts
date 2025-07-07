@@ -2,17 +2,17 @@ import type { ColorKeys } from "../theme-colors/theme-colors";
 
 export type IconButtonState = {
   iconColor: ColorKeys;
-  outlineWidth?: number;
-  outlineColor?: ColorKeys;
-  transition?: string;
 };
 
 export type IconButtonVariantStates = {
   default: IconButtonState;
-  hover: Partial<IconButtonState>;
-  focus: Partial<IconButtonState>;
-  active: Partial<IconButtonState>;
-  disabled: Partial<IconButtonState>;
+  hover: IconButtonState;
+  focus: IconButtonState & {
+    outlineWidth: number;
+    outlineColor: ColorKeys;
+  };
+  active: IconButtonState;
+  disabled: IconButtonState;
 };
 
 export type IconButtonStyle = {
@@ -21,13 +21,13 @@ export type IconButtonStyle = {
   buttonSize: number;
 };
 
-export type IconButtonThemeType = {
+export type ThemeIconButtonType = {
   variants: {
     intense: IconButtonVariantStates;
-    subtle: IconButtonVariantStates;
   };
   sizes: {
     small: IconButtonStyle;
+    medium: IconButtonStyle;
     regular: IconButtonStyle;
     large: IconButtonStyle;
   };

@@ -5,4 +5,5 @@ export const TextColors = {
   primary: "#1A2031",
   bolder: "#13161E",
   inverse: "#FFFFFF",
+  "text-100": "#5A6987",
 };

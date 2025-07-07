@@ -6,6 +6,7 @@ import Benchmarks from "./benchmarks.svg?react";
 import Book from "./book.svg?react";
 import Close from "./close.svg?react";
 import ChevronDown from "./chevron-down.svg?react";
+import ChevronLeft from "./chevron-left.svg?react";
 import Chart from "./chart.svg?react";
 import CheckboxCheck from "./checkbox-check.svg?react";
 import CheckboxMinus from "./checkbox-minus.svg?react";
@@ -23,6 +24,7 @@ import ScriptLibrary from "./script-library.svg?react";
 import Servers from "./servers.svg?react";
 import Switcher from "./switcher.svg?react";
 import TessellLogo from "./tessell-logo.svg?react";
+import TessellTypoLogo from "./tessell-typo-logo.svg?react";
 import QuestionMark from "./question-mark.svg?react";
 
 export const AppIcons = {
@@ -40,6 +42,7 @@ export const AppIcons = {
   Cloud,
   CmdE,
   ChevronDown,
+  ChevronLeft,
   DataFlix,
   Drawer,
   InfoIcon,
@@ -51,6 +54,7 @@ export const AppIcons = {
   Servers,
   Switcher,
   TessellLogo,
+  TessellTypoLogo,
   QuestionMark,
 };
 
