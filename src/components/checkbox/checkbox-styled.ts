@@ -66,20 +66,20 @@ export const StyledBox = styled.span<StyledBoxProps>`
         : css`
             ${$checked === undefined || $checked === null
               ? css`
-                  background-color: ${colors["secondary-0"]};
-                  border-color: ${colors[states.default.border]};
-                  color: ${colors["secondary-0"]};
+                  background-color: ${colors[states.intermediate.background]};
+                  border-color: ${colors[states.intermediate.border]};
+                  color: ${colors[states.intermediate.icon]};
                 `
               : $checked === false
               ? css`
-                  background-color: ${colors["secondary-0"]};
-                  border-color: ${colors["primary-300"]};
-                  color: ${colors["primary-300"]};
+                  background-color: ${colors[states.default.background]};
+                  border-color: ${colors[states.default.border]};
+                  color: ${colors[states.default.icon]};
                 `
               : css`
-                  background-color: ${colors["primary-200"]};
-                  border-color: ${colors["primary-200"]};
-                  color: ${colors["inverse"]};
+                  background-color: ${colors[states.active.background]};
+                  border-color: ${colors[states.active.border]};
+                  color: ${colors[states.active.icon]};
                 `}
 
             &:hover {

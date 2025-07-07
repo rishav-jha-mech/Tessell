@@ -5,9 +5,9 @@ import { Dropdown } from "../../../../components/dropdown/dropdown";
 import FlexView from "../../../../components/flex-view/flex-view";
 import { Radio } from "../../../../components/radio/radio";
 import Separator from "../../../../components/separator/separator";
-import { Table } from "../../../../components/table/table";
 import TextInput from "../../../../components/text-input/text-input";
 import { Text } from "../../../../components/text/text";
+import TableItem from "./table-item";
 
 const AdditionalSettingsSection = () => {
   return (
@@ -86,7 +86,7 @@ const AdditionalSettingsSection = () => {
           />
         </FlexView>
       </FlexView>
-      <Table />
+      <TableItem />
       <Separator heightX={2} />
       <Alert
         theme="info"

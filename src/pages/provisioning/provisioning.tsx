@@ -13,7 +13,7 @@ import AdditionalSettingsSection from "./comps/additional-settings-section/addit
 const Provisioning = () => {
   const { toggleDrawer } = useDrawerContext();
   const {
-    spacing: { GAP, PAGE_PADDING },
+    spacing: { GAP },
   } = useTheme();
 
   return (
@@ -48,13 +48,7 @@ const Provisioning = () => {
         onDismiss={toggleDrawer}
       />
       <Separator heightX={1.5} />
-      <FlexView
-        $flex={1}
-        $gap={GAP}
-        $paddingHorizontal={PAGE_PADDING}
-        $alignItems="flex-start"
-        $justifyContent="space-between"
-      >
+      <S.ContentArea>
         <S.CreateServiceSectionWrapper>
           <StepsSection />
         </S.CreateServiceSectionWrapper>
@@ -66,7 +60,8 @@ const Provisioning = () => {
             <AdditionalSettingsSection />
           </S.ContentContainer>
         </FlexView>
-      </FlexView>
+      </S.ContentArea>
+      <Separator heightX={2} />
     </S.ContentWrapper>
   );
 };

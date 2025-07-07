@@ -6,22 +6,22 @@ export const ThemeCheckbox: ThemeCheckboxType = {
       default: {
         background: "surface-100",
         border: "subtler",
-        icon: "inverse",
+        icon: "primary-200",
       },
       hover: {
-        background: "surface-300",
+        background: "secondary-0",
         border: "primary-300",
-        icon: "inverse",
+        icon: "primary-300",
       },
       active: {
-        background: "primary-300",
-        border: "primary-300",
+        background: "primary-200",
+        border: "primary-200",
         icon: "inverse",
       },
       intermediate: {
         background: "surface-0",
         border: "primary-200",
-        icon: "inverse",
+        icon: "primary-200",
       },
       disabled: {
         background: "surface-50",
