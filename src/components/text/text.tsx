@@ -4,12 +4,13 @@ import * as S from "./text.styled";
 
 export const Text = React.forwardRef<HTMLSpanElement, TextProps>(
   (
-    { children, $renderAs, $color, $displayAs = "block", ...restProps },
+    { as, children, $renderAs, $color, $displayAs = "block", ...restProps },
     ref
   ) => {
     return (
       <S.TextBase
         ref={ref}
+        as={as}
         $renderAs={$renderAs}
         $color={$color}
         $displayAs={$displayAs}

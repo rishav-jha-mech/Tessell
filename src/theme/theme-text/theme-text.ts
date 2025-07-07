@@ -122,6 +122,7 @@ export const ThemeText = {
     fontSize: "20px",
     lineHeight: "24px",
     letterSpacing: "-0.2px",
+    verticalAlign: "middle",
   },
   ["Heading/3"]: {
     fontFamily: "Inter, sans-serif",
@@ -130,6 +131,7 @@ export const ThemeText = {
     fontSize: "13px",
     lineHeight: "20px",
     letterSpacing: "0px",
+    verticalAlign: "middle",
   },
   ["button/large"]: {
     fontFamily: "Inter, sans-serif",
@@ -138,6 +140,7 @@ export const ThemeText = {
     fontSize: "16px",
     lineHeight: "24px",
     letterSpacing: "0px",
+    verticalAlign: "middle",
   },
 };
 

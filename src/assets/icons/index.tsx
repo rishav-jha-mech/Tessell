@@ -18,6 +18,7 @@ import Calendar from "./calendar.svg?react";
 import Clock from "./clock.svg?react";
 import CmdE from "./cmd-e.svg?react";
 import DataFlix from "./data-flix.svg?react";
+import Delete from "./delete.svg?react";
 import Drawer from "./drawer.svg?react";
 import InfoIcon from "./info-icon.svg?react";
 import MyServices from "./my-services.svg?react";
@@ -26,6 +27,7 @@ import Pin from "./pin.svg?react";
 import Provisioning from "./provisioning.svg?react";
 import ScriptLibrary from "./script-library.svg?react";
 import Servers from "./servers.svg?react";
+import Sort from "./sort.svg?react";
 import Switcher from "./switcher.svg?react";
 import TessellLogo from "./tessell-logo.svg?react";
 import TessellTypoLogo from "./tessell-typo-logo.svg?react";
@@ -52,6 +54,7 @@ export const AppIcons = {
   ChevronDown,
   ChevronLeft,
   DataFlix,
+  Delete,
   Drawer,
   InfoIcon,
   MyServices,
@@ -60,6 +63,7 @@ export const AppIcons = {
   Provisioning,
   ScriptLibrary,
   Servers,
+  Sort,
   Switcher,
   TessellLogo,
   TessellTypoLogo,

@@ -5,6 +5,7 @@ import { Dropdown } from "../../../../components/dropdown/dropdown";
 import FlexView from "../../../../components/flex-view/flex-view";
 import { Radio } from "../../../../components/radio/radio";
 import Separator from "../../../../components/separator/separator";
+import { Table } from "../../../../components/table/table";
 import TextInput from "../../../../components/text-input/text-input";
 import { Text } from "../../../../components/text/text";
 
@@ -85,6 +86,8 @@ const AdditionalSettingsSection = () => {
           />
         </FlexView>
       </FlexView>
+      <Table />
+      <Separator heightX={2} />
       <Alert
         theme="info"
         message="Projecting an estimate total count of 71 snapshots with the above configuration."

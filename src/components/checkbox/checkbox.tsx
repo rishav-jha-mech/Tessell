@@ -29,7 +29,9 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         disabled={$disabled}
       >
         {$checked === true && <AppIcons.CheckboxCheck />}
-        {$checked === false && <AppIcons.CheckboxMinus />}
+        {($checked === undefined || $checked === null) && (
+          <AppIcons.CheckboxMinus />
+        )}
       </StyledBox>
       <Separator widthX={0.5} />
       <Text $renderAs="Text-body/primary/primary">{$label}</Text>

@@ -12,6 +12,7 @@ export const TextBase = styled.span<StyledTextProps>`
     $userSelect = "text",
     $marginHorizontal,
     $marginVertical,
+    $textDecoration,
   }) => {
     const variant = theme.text[$renderAs];
     return css`
@@ -30,6 +31,7 @@ export const TextBase = styled.span<StyledTextProps>`
       user-select: ${$userSelect};
       margin: ${$marginVertical || "0"} ${$marginHorizontal || "0"};
       text-align: ${$displayAs === "inline" ? "inherit" : "left"};
+      text-decoration: ${$textDecoration || "none"};
     `;
   }}
 `;
