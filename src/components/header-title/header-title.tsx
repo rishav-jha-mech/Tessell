@@ -15,16 +15,16 @@ const HeaderTitle: React.FC<HeaderTitleProps> = ({
 
   return (
     <FlexView
-      $align="center"
-      $justify="space-between"
+      $alignItems="center"
+      $justifyContent="space-between"
       $paddingHorizontal={GAP}
-      $height={GUTTER * 3}
+      height={GUTTER * 3}
       $borderTopWidth={1}
     >
       <FlexView $flex={1}>
         <Text $renderAs="heading/primary">{title}</Text>
       </FlexView>
-      <FlexView $align="center" $gap={GUTTER / 2}>
+      <FlexView $alignItems="center" $gap={GUTTER / 2}>
         {trailingItem}
         {onDismiss && (
           <IconButton

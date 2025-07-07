@@ -24,7 +24,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
       $focused={focused}
     >
       {$label && <Text $renderAs="headingForm">{$label}</Text>}
-      <Separator $height={8} />
+      <Separator height={8} />
 
       <S.TextInputBaseWrapper>
         <S.TextInputBase
@@ -56,7 +56,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
 
       {$helpText && (
         <>
-          <Separator $height={8} />
+          <Separator height={8} />
           <Text $renderAs="headingForm" $color={$helpText.color}>
             {$helpText.message}
           </Text>

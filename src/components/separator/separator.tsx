@@ -3,7 +3,7 @@ import type { SeparatorProps } from "./separator-types";
 import { SeparatorBase } from "./separator-styled";
 
 const Separator: React.FC<SeparatorProps> = (props) => (
-  <SeparatorBase {...props} aria-hidden="true" />
+  <SeparatorBase aria-hidden="true" {...props} />
 );
 
 export default Separator;

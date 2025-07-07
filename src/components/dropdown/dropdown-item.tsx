@@ -13,12 +13,12 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
 }) => {
   return (
     <S.DropdownItemBase
-      $align="center"
-      $justify="space-between"
+      $alignItems="center"
+      $justifyContent="space-between"
       $isSelected={$isSelected}
       onClick={onClick}
     >
-      <FlexView $align="center" $justify="start" $flex="1">
+      <FlexView $alignItems="center" $justifyContent="start" $flex="1">
         {$leadingItem && <S.LeadingItem>{$leadingItem}</S.LeadingItem>}
         <Text $renderAs="bodyPrimary" $color="inherit">
           {label}

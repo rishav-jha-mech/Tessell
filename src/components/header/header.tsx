@@ -23,20 +23,20 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <FlexView
       $direction="row"
-      $align="center"
-      $justify="space-between"
+      $alignItems="center"
+      $justifyContent="space-between"
       $paddingHorizontal={GAP}
-      $height={GUTTER * 3}
+      height={GUTTER * 3}
     >
       <Breadcrumbs items={breadcrumbs} />
-      <FlexView $direction="row" $align="center" $gap={GUTTER / 2}>
+      <FlexView $direction="row" $alignItems="center" $gap={GUTTER / 2}>
         <Text
           $renderAs="Text-body/primary/primary"
           $marginHorizontal={GUTTER / 2}
         >
           Credits: ${credits ?? 0}
         </Text>
-        <Separator $background="surface-200" $height={20} $width={1} />
+        <Separator background="surface-200" height={20} width={1} />
         <IconButton
           $ariaLabel="Announcement"
           $iconName="Announcement"

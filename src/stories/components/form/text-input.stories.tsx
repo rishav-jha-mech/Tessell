@@ -25,7 +25,7 @@ const AllTextInputsComp = () => {
       {Object.keys(textInput.sizes).map((size) => (
         <FlexView $direction="column" style={{ width: "300px" }}>
           <Text $renderAs="headingLg">{size.toLocaleUpperCase()} Input</Text>
-          <Separator $height={20} />
+          <Separator height={20} />
           <TextInput
             $label="Input with help text"
             placeholder="Default input"

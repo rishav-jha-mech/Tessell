@@ -41,7 +41,7 @@ export const AllButtons: Story = {
         {variants.map((variant) => (
           <div key={variant}>
             <Text $renderAs="headingLg">{variant.toUpperCase()}</Text>
-            <Separator $height={20} />
+            <Separator height={20} />
             <FlexView $gap={20}>
               {sizes.map((size) => (
                 <Button key={size} $type={variant} $size={size} $icon="Add">
@@ -75,9 +75,9 @@ export const AllButtons: Story = {
                 Loading
               </Button>
             </FlexView>
-            <Separator $height={20} />
+            <Separator height={20} />
             <Text $renderAs="headingLg">Full Width</Text>
-            <Separator $height={20} />
+            <Separator height={20} />
             <FlexView $gap={20} $direction="column">
               {sizes.map((size) => (
                 <Button
@@ -112,9 +112,9 @@ export const AllButtons: Story = {
               </Button>
             </FlexView>
 
-            <Separator $height={20} />
+            <Separator height={20} />
             <Text $renderAs="headingLg">Icon Only</Text>
-            <Separator $height={20} />
+            <Separator height={20} />
             <FlexView $gap={20}>
               {sizes.map((size) => (
                 <Button
@@ -140,8 +140,8 @@ export const AllButtons: Story = {
                 $isLoading
               />
             </FlexView>
-            <Separator $height={20} />
-            <Separator $height={2} $background="primary" $width={"100%"} />
+            <Separator height={20} />
+            <Separator height={2} $background="primary" width={"100%"} />
           </div>
         ))}
       </FlexView>

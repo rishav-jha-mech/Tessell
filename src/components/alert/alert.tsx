@@ -39,7 +39,7 @@ const Alert: React.FC<AlertProps> = ({
     <FlexView
       $background={backgroundColor}
       $gap={8}
-      $height={"40px"}
+      height={"40px"}
       $borderRadius={4}
       $align="center"
       $paddingHorizontal={8}

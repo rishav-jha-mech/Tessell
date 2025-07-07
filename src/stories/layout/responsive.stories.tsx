@@ -41,7 +41,12 @@ const ResponsiveExample: React.FC = () => {
   const breakpoint = useCurrentBreakpoint();
 
   return (
-    <FlexView $align="center" $justify="center" $direction="column" $gap={20}>
+    <FlexView
+      $alignItems="center"
+      $justifyContent="center"
+      $direction="column"
+      $gap={20}
+    >
       <Text $renderAs="headingLg">Responsive Example</Text>
       <SizedBox />
       <Text $renderAs="headingLg">Current Breakpoint: {breakpoint}</Text>

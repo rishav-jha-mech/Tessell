@@ -19,7 +19,7 @@ const AllAlerts = () => {
       <Alert theme="success" message="This is a success alert" />
       <Alert theme="error" message="This is an error alert" />
       <Alert theme="warning" message="This is a warning alert" />
-      <Separator $height={10} />
+      <Separator height={10} />
       <Text $renderAs="headingLg">Alert Non-Dismissable Variants</Text>
       <Alert
         theme="info"

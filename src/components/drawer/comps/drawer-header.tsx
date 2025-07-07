@@ -11,13 +11,13 @@ const DrawerHeader = () => {
   } = useTheme();
 
   return (
-    <FlexView $height={GUTTER * 2} $align="center">
-      <FlexView $flex={1} $justify="start" $align="center">
+    <FlexView height={GUTTER * 2} $alignItems="center">
+      <FlexView $flex={1} $justifyContent="start" $alignItems="center">
         <AppIcons.TessellLogo width={20.4} height={20.4} />
-        <Separator $width={4} />
+        <Separator width={4} />
         <AppIcons.TessellTypoLogo height={20} width={40} />
       </FlexView>
-      <FlexView $height={"auto"} $width={32} $justify="center" $align="center">
+      <FlexView height={"auto"} width={32} $justifyContent="center" $alignItems="center">
         <IconButton
           $iconName="Drawer"
           $size="regular"

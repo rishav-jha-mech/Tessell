@@ -47,13 +47,13 @@ export const Button: React.FC<ButtonProps> = ({
       ) : (
         <>
           <LeadingIcon height={iconSize} width={iconSize} />
-          {!$iconOnly && <Separator $width={iconMarginRight} />}
+          {!$iconOnly && <Separator width={iconMarginRight} />}
           {children}
         </>
       )}
       {TrailingIcon && (
-        <FlexView $align="center" $justify="flex-end" $flex={1}>
-          <Separator $width={iconMarginRight} />
+        <FlexView $alignItems="center" $justifyContent="flex-end" $flex={1}>
+          <Separator width={iconMarginRight} />
           <TrailingIcon height={iconSize} width={iconSize} />
         </FlexView>
       )}

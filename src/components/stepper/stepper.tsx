@@ -45,7 +45,7 @@ const Stepper: React.FC<StepperProps> = ({ onStepChange, steps }) => {
               </Text>
             </S.StepItem>
             {step.children && <S.StepContent>{step.children}</S.StepContent>}
-            <Separator $height={16} />
+            <Separator height={16} />
           </div>
         );
       })}

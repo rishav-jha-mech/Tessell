@@ -70,7 +70,7 @@ const Drawer: React.FC<DrawerProps> = ({
     <S.DrawerWrapper $isOpen={isOpen}>
       <FlexView $direction="column" $flex={1}>
         <DrawerHeader />
-        <Separator $height={11} />
+        <Separator height={11} />
         <Button
           $icon="Switcher"
           $size="small"
@@ -82,14 +82,14 @@ const Drawer: React.FC<DrawerProps> = ({
             Apps
           </Text>
         </Button>
-        <Separator $height={GUTTER / 2} />
+        <Separator height={GUTTER / 2} />
         <Dropdown
           $options={dropdown.options}
           $placeholder="Select an option"
           $value={dropdown.selected}
           onChange={dropdown.handleChange}
         />
-        <Separator $height={GUTTER / 2} />
+        <Separator height={GUTTER / 2} />
         {menuBtns.map((btnOptions, index) => (
           <Button key={index} {...btnOptions} />
         ))}
@@ -97,7 +97,7 @@ const Drawer: React.FC<DrawerProps> = ({
         {footerBtns.map((btnOptions, index) => (
           <Button key={index} {...btnOptions} />
         ))}
-        <Separator $height={12} />
+        <Separator height={12} />
       </FlexView>
       <S.CloseDrawerBtnWrapper $isOpen={isOpen}>
         <IconButton

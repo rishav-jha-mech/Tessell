@@ -63,7 +63,7 @@ export const Playground: Story = {
   render: (args) => (
     <>
       <Text $renderAs="headingLg">Flexview</Text>
-      <Separator $height={20} />
+      <Separator height={20} />
       <FlexView {...args}>
         <Box>Item 1</Box>
         <Box>Item 2</Box>
