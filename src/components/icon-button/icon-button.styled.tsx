@@ -8,11 +8,12 @@ export const IconButtonBase = styled.button<
 >`
   ${({ theme, $variant, $size, disabled }) => {
     const variant = theme.iconButton.variants[$variant];
-    const { iconSize,buttonSize, buttonRadius } = theme.iconButton.sizes[$size];
+    const { iconSize, buttonRadius } =
+      theme.iconButton.sizes[$size];
 
     return css`
-      height: ${buttonSize}px;
-      width: ${buttonSize}px;
+      height: ${iconSize}px;
+      width: ${iconSize}px;
       display: flex;
       align-items: center;
       justify-content: center;

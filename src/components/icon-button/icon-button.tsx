@@ -1,8 +1,7 @@
 import React from "react";
-import * as S from "./icon-button.styled";
-import type { IconButtonProps } from "./icon-button-types";
-import { useTheme } from "styled-components";
 import { AppIcons } from "../../assets/icons";
+import type { IconButtonProps } from "./icon-button-types";
+import * as S from "./icon-button.styled";
 
 export const IconButton: React.FC<IconButtonProps> = ({
   $iconName,
@@ -12,13 +11,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
   $ariaLabel,
   ...rest
 }) => {
-  const {
-    iconButton: { sizes },
-  } = useTheme();
   const IconComponent = AppIcons[$iconName];
-
-  const iconSize = sizes[$size].iconSize;
-
   return (
     <S.IconButtonBase
       $variant={$variant}
@@ -28,7 +21,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       {...rest}
     >
       <S.IconWrapper>
-        <IconComponent height={iconSize * 0.8} width={iconSize * 0.8} />
+        <IconComponent />
       </S.IconWrapper>
     </S.IconButtonBase>
   );

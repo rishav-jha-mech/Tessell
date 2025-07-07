@@ -88,6 +88,14 @@ export const ThemeText = {
     letterSpacing: "0px",
     verticalAlign: "middle",
   },
+  ["heading/primary"]: {
+    fontFamily: "Inter, sans-serif",
+    fontStyle: "normal",
+    fontWeight: fontWeights.medium,
+    fontSize: "15px",
+    lineHeight: "22px",
+    letterSpacing: "-0.1px",
+  },
 };
 
 export type TextVariant = keyof typeof ThemeText;

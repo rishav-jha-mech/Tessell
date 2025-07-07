@@ -1,0 +1,43 @@
+import { useTheme } from "styled-components";
+import FlexView from "../flex-view/flex-view";
+import { Text } from "../text/text";
+import type { HeaderTitleProps } from "./header-title-types";
+import { IconButton } from "../icon-button/icon-button";
+
+const HeaderTitle: React.FC<HeaderTitleProps> = ({
+  title,
+  onDismiss,
+  trailingItem,
+}) => {
+  const {
+    spacing: { GAP, GUTTER },
+  } = useTheme();
+
+  return (
+    <FlexView
+      $align="center"
+      $justify="space-between"
+      $paddingHorizontal={GAP}
+      $height={GUTTER * 3}
+      $borderTopWidth={1}
+    >
+      <FlexView $flex={1}>
+        <Text $renderAs="heading/primary">{title}</Text>
+      </FlexView>
+      <FlexView $align="center" $gap={GUTTER / 2}>
+        {trailingItem}
+        {onDismiss && (
+          <IconButton
+            $iconName="Close"
+            $size="regular"
+            $variant="intense"
+            $ariaLabel="Close"
+            onClick={onDismiss}
+          />
+        )}
+      </FlexView>
+    </FlexView>
+  );
+};
+
+export default HeaderTitle;

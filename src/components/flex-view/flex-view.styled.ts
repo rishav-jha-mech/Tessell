@@ -16,4 +16,6 @@ export const FlexContainer = styled.div<FlexViewProps>`
     typeof $height === "number" ? `${$height}px` : $height};
   padding: ${({ $paddingHorizontal = 0, $paddingVertical = 0 }) =>
     `${$paddingVertical}px ${$paddingHorizontal}px`};
+  border-top: ${({ $borderTopWidth = 0 }) => $borderTopWidth}px solid
+    ${({ theme }) => theme.colors["surface-100"]};
 `;

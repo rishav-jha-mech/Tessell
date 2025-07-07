@@ -12,4 +12,5 @@ export interface FlexViewProps extends React.HTMLAttributes<HTMLDivElement> {
   $wrap?: React.CSSProperties["flexWrap"];
   $background?: ColorKeys;
   $borderRadius?: number;
+  $borderTopWidth?: number;
 }
