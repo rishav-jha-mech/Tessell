@@ -5,40 +5,93 @@ import FlexView from "../../../components/flex-view/flex-view";
 import { Text } from "../../../components/text/text";
 
 export const CheckboxAllVariants: React.FC = () => {
-  const [checkbox1, setCheckbox1] = useState<boolean>();
-  const [checkbox2, setCheckbox2] = useState<boolean>();
+  const [checked, setChecked] = useState(true);
+  const [unchecked, setUnchecked] = useState(false);
+  const [intermediate, setIntermediate] = useState(false);
 
   return (
-    <FlexView>
-      <FlexView $gap={20} $direction="column" style={{ width: "300px" }}>
-        <Text $renderAs="headingLg">Regular Checkboxes</Text>
+    <FlexView $gap={40}>
+      <FlexView $gap={12} $direction="column" style={{ width: "300px" }}>
+        <Text $renderAs="headingLg">Default Size</Text>
+
         <Checkbox
-          $label="Default"
-          $checked={checkbox1}
-          onChange={() => setCheckbox1(!checkbox1)}
+          $label="Unchecked"
+          $checked={unchecked}
+          onChange={() => setUnchecked(!unchecked)}
         />
+
         <Checkbox
-          $label="False by default"
-          $checked={checkbox2}
-          onChange={() => setCheckbox2(!checkbox2)}
+          $label="Checked"
+          $checked={checked}
+          onChange={() => setChecked(!checked)}
         />
-        <Checkbox $label="Disabled" $disabled />
+
+        <Checkbox
+          $label="Intermediate"
+          $checked={false}
+          $indeterminate={true}
+          onChange={() => setIntermediate(!intermediate)}
+        />
+
+        <Checkbox $label="Disabled Unchecked" $checked={false} $disabled />
+
+        <Checkbox $label="Disabled Checked" $checked={true} $disabled />
+
+        <Checkbox
+          $label="Disabled Intermediate"
+          $checked={false}
+          $indeterminate={true}
+          $disabled
+        />
       </FlexView>
-      <FlexView $gap={20} $direction="column" style={{ width: "300px" }}>
-        <Text $renderAs="headingLg">Large Checkboxes</Text>
+
+      {/* Large size */}
+      <FlexView $gap={12} $direction="column" style={{ width: "300px" }}>
+        <Text $renderAs="headingLg">Large Size</Text>
+
         <Checkbox
-          $label="Default"
+          $label="Unchecked"
           $size="large"
-          $checked={checkbox1}
-          onChange={() => setCheckbox1(!checkbox1)}
+          $checked={unchecked}
+          onChange={() => setUnchecked(!unchecked)}
         />
+
         <Checkbox
-          $label="False by default"
+          $label="Checked"
           $size="large"
-          $checked={checkbox2}
-          onChange={() => setCheckbox2(!checkbox2)}
+          $checked={checked}
+          onChange={() => setChecked(!checked)}
         />
-        <Checkbox $size="large" $label="Disabled" $disabled />
+
+        <Checkbox
+          $label="Intermediate"
+          $size="large"
+          $checked={false}
+          $indeterminate={true}
+          onChange={() => setIntermediate(!intermediate)}
+        />
+
+        <Checkbox
+          $label="Disabled Unchecked"
+          $size="large"
+          $checked={false}
+          $disabled
+        />
+
+        <Checkbox
+          $label="Disabled Checked"
+          $size="large"
+          $checked={true}
+          $disabled
+        />
+
+        <Checkbox
+          $label="Disabled Intermediate"
+          $size="large"
+          $checked={false}
+          $indeterminate={true}
+          $disabled
+        />
       </FlexView>
     </FlexView>
   );

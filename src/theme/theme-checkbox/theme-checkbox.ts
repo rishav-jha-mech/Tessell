@@ -3,30 +3,67 @@ import type { ThemeCheckboxType } from "./theme-checkbox-types";
 export const ThemeCheckbox: ThemeCheckboxType = {
   variants: {
     primary: {
-      default: {
-        background: "surface-100",
-        border: "subtler",
-        icon: "primary-200",
-      },
-      hover: {
-        background: "secondary-0",
-        border: "primary-300",
-        icon: "primary-300",
-      },
-      active: {
-        background: "primary-200",
-        border: "primary-200",
-        icon: "inverse",
+      unchecked: {
+        default: {
+          backgroundColor: "opacity-transparent",
+          borderColor: "border-bold",
+        },
+        hover: {
+          backgroundColor: "secondary-0",
+          borderColor: "primary-200",
+        },
+        active: {
+          backgroundColor: "secondary-0",
+          borderColor: "primary-300",
+        },
+        disabled: {
+          backgroundColor: "surface-secondary",
+          borderColor: "subtlest",
+        },
       },
       intermediate: {
-        background: "surface-0",
-        border: "primary-200",
-        icon: "primary-200",
+        default: {
+          backgroundColor: "secondary-0",
+          borderColor: "primary-200",
+          iconColor: "primary-200",
+        },
+        hover: {
+          backgroundColor: "secondary-0",
+          borderColor: "primary-300",
+          iconColor: "primary-300",
+        },
+        active: {
+          backgroundColor: "opacity-transparent",
+          borderColor: "primary-300",
+          iconColor: "primary-300",
+        },
+        disabled: {
+          iconColor: "inverse",
+          backgroundColor: "surface-secondary",
+          borderColor: "subtlest",
+        },
       },
-      disabled: {
-        background: "surface-50",
-        border: "surface-300",
-        icon: "disabled",
+      active: {
+        default: {
+          backgroundColor: "primary-200",
+          borderColor: "primary-200",
+          iconColor: "inverse",
+        },
+        hover: {
+          backgroundColor: "primary-300",
+          borderColor: "primary-300",
+          iconColor: "inverse",
+        },
+        active: {
+          backgroundColor: "primary-300",
+          borderColor: "primary-300",
+          iconColor: "inverse",
+        },
+        disabled: {
+          iconColor: "inverse",
+          backgroundColor: "surface-secondary",
+          borderColor: "subtlest",
+        },
       },
     },
   },

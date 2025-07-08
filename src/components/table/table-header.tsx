@@ -10,11 +10,16 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
   isAllSelected,
   onSelectAll,
   headers,
+  isIndeterminate,
 }) => {
   return (
     <HeaderRow>
       <HeaderCell>
-        <Checkbox $checked={isAllSelected} onChange={onSelectAll} />
+        <Checkbox
+          $checked={isAllSelected}
+          $indeterminate={isIndeterminate}
+          onChange={onSelectAll}
+        />
       </HeaderCell>
       {headers.map((header) => (
         <HeaderCell key={header.title}>

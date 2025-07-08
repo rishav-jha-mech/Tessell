@@ -5,6 +5,7 @@ interface StyledBoxProps {
   $variant: keyof ThemeCheckboxType["variants"];
   $size: keyof ThemeCheckboxType["sizes"];
   $checked?: boolean | null;
+  $intermediate?: boolean;
   disabled?: boolean;
 }
 
@@ -24,77 +25,74 @@ export const StyledLabel = styled.label<{ disabled?: boolean }>`
   align-items: center;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
-
 export const StyledBox = styled.span<StyledBoxProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 0;
-  gap: 0;
   border-width: 1px;
   border-style: solid;
   transition: all 0.2s;
 
-  ${({ theme, $variant, $size, $checked, disabled }) => {
+  ${({ theme, $variant, $size, $checked, $intermediate, disabled }) => {
     const { variants, sizes } = theme.checkbox as ThemeCheckboxType;
-    const states = variants[$variant];
-    const sizeConfig = sizes[$size];
     const colors = theme.colors;
 
-    const radius = 4;
-    const outlineWidth = 4;
-    const outlineRadius = 4;
-    const outlineColor = colors["border-focus"];
+    const states = variants[$variant];
+    const sizeConfig = sizes[$size];
+
+    let variantStateKey: keyof typeof states = "unchecked";
+    if ($intermediate) {
+      variantStateKey = "intermediate";
+    } else if ($checked) {
+      variantStateKey = "active";
+    } else {
+      variantStateKey = "unchecked";
+    }
+
+    let interactionKey: keyof typeof states.unchecked = "default";
+    if (disabled) {
+      interactionKey = "disabled";
+    }
+
+    const variantState = states[variantStateKey];
+    const style = variantState[interactionKey];
 
     return css`
       width: ${sizeConfig.size}px;
       height: ${sizeConfig.size}px;
-      border-radius: ${radius}px;
+      border-radius: 4px;
+
+      background-color: ${colors[style.backgroundColor]};
+      border-color: ${colors[style.borderColor]};
+      color: ${style.iconColor ? colors[style.iconColor] : "inherit"};
 
       svg {
         width: ${sizeConfig.checkIconSize}px;
         height: ${sizeConfig.checkIconSize}px;
       }
 
-      ${disabled
-        ? css`
-            background-color: ${colors[states.disabled.background]};
-            border-color: ${colors[states.disabled.border]};
-            color: ${colors[states.disabled.icon]};
-          `
-        : css`
-            ${$checked === undefined || $checked === null
-              ? css`
-                  background-color: ${colors[states.intermediate.background]};
-                  border-color: ${colors[states.intermediate.border]};
-                  color: ${colors[states.intermediate.icon]};
-                `
-              : $checked === false
-              ? css`
-                  background-color: ${colors[states.default.background]};
-                  border-color: ${colors[states.default.border]};
-                  color: ${colors[states.default.icon]};
-                `
-              : css`
-                  background-color: ${colors[states.active.background]};
-                  border-color: ${colors[states.active.border]};
-                  color: ${colors[states.active.icon]};
-                `}
+      ${!disabled &&
+      css`
+        &:hover {
+          background-color: ${colors[variantState.hover.backgroundColor]};
+          border-color: ${colors[variantState.hover.borderColor]};
+          color: ${variantState.hover.iconColor
+            ? colors[variantState.hover.iconColor]
+            : "inherit"};
+        }
 
-            &:hover {
-              background-color: ${colors[states.hover.background]};
-              border-color: ${colors[states.hover.border]};
-              color: ${colors[states.hover.icon]};
-            }
-
-            &:active {
-              outline-style: solid;
-              outline-width: ${outlineWidth}px;
-              outline-color: ${outlineColor};
-              border-radius: ${outlineRadius}px;
-            }
-          `}
+        &:active {
+          background-color: ${colors[variantState.active.backgroundColor]};
+          border-color: ${colors[variantState.active.borderColor]};
+          color: ${variantState.active.iconColor
+            ? colors[variantState.active.iconColor]
+            : "inherit"};
+          outline-width: 4px;
+          outline-style: solid;
+          outline-color: ${colors["border-focus"]};
+        }
+      `}
     `;
   }}
 `;

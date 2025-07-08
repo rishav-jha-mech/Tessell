@@ -7,4 +7,5 @@ export interface CheckboxProps
   $size?: keyof ThemeCheckboxType["sizes"];
   $disabled?: boolean;
   $checked?: boolean;
+  $indeterminate?: boolean;
 }

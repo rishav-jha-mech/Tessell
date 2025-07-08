@@ -20,6 +20,7 @@ export interface HeaderData {
 
 export interface TableHeaderProps {
   isAllSelected: boolean;
+  isIndeterminate: boolean;
   onSelectAll: () => void;
   headers: HeaderData[];
 }

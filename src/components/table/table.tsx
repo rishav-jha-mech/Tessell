@@ -10,7 +10,11 @@ export const Table: React.FC<TableProps> = ({
   setSelectedRows,
 }) => {
   const rowIds = rows.map((row) => row[0].id);
-  const isAllSelected = selectedRows.length === rows.length;
+  const totalRows = rowIds.length;
+  const selectedCount = selectedRows.length;
+
+  const isAllSelected = selectedCount === totalRows && totalRows > 0;
+  const isIndeterminate = selectedCount > 0 && selectedCount < totalRows;
 
   const toggleSelectAll = () => {
     setSelectedRows(isAllSelected ? [] : rowIds);
@@ -30,6 +34,7 @@ export const Table: React.FC<TableProps> = ({
         <thead>
           <TableHeader
             isAllSelected={isAllSelected}
+            isIndeterminate={isIndeterminate}
             onSelectAll={toggleSelectAll}
             headers={headers}
           />

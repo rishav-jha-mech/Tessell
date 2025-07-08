@@ -1,30 +1,35 @@
 import type { ColorKeys } from "../theme-colors/theme-colors";
 
-export type CheckboxState = {
-  background: ColorKeys;
-  border: ColorKeys;
-  icon: ColorKeys;
+type CheckboxStateStyleTokens = {
+  backgroundColor: ColorKeys;
+  borderColor: ColorKeys;
+  iconColor?: ColorKeys;
 };
 
-export type CheckboxVariants = {
-  default: CheckboxState;
-  hover: CheckboxState;
-  active: CheckboxState;
-  intermediate: CheckboxState;
-  disabled: CheckboxState;
+type CheckboxInteractionStates = {
+  default: CheckboxStateStyleTokens;
+  hover: CheckboxStateStyleTokens;
+  active: CheckboxStateStyleTokens;
+  disabled: CheckboxStateStyleTokens;
 };
 
-export type CheckboxSizes = {
+type CheckboxVariantStates = {
+  unchecked: CheckboxInteractionStates;
+  active: CheckboxInteractionStates;
+  intermediate: CheckboxInteractionStates;
+};
+
+type CheckboxSizeTokens = {
   size: number;
   checkIconSize: number;
 };
 
 export type ThemeCheckboxType = {
   variants: {
-    primary: CheckboxVariants;
+    primary: CheckboxVariantStates;
   };
   sizes: {
-    default: CheckboxSizes;
-    large: CheckboxSizes;
+    default: CheckboxSizeTokens;
+    large: CheckboxSizeTokens;
   };
 };
