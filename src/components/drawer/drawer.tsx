@@ -10,17 +10,18 @@ import type { DrawerProps } from "./drawer-types";
 import type { ButtonProps } from "../button/button-types";
 import { useMemo } from "react";
 import { IconButton } from "../icon-button/icon-button";
+import { useDrawerContext } from "../../context/drawer-context/use-drawer-context";
 
 const Drawer: React.FC<DrawerProps> = ({
   dropdown,
   menuOptions,
   footerOptions,
-  isOpen,
-  toggleDrawer,
 }) => {
   const {
     spacing: { GUTTER },
   } = useTheme();
+
+  const { isDrawerOpen, toggleDrawer } = useDrawerContext();
 
   const menuBtns = useMemo(
     () =>
@@ -67,7 +68,7 @@ const Drawer: React.FC<DrawerProps> = ({
   );
 
   return (
-    <S.DrawerWrapper $isOpen={isOpen}>
+    <S.DrawerWrapper $isOpen={isDrawerOpen}>
       <FlexView $direction="column" $flex={1}>
         <DrawerHeader />
         <Separator height={11} />
@@ -102,7 +103,7 @@ const Drawer: React.FC<DrawerProps> = ({
         ))}
         <Separator height={12} />
       </FlexView>
-      <S.CloseDrawerBtnWrapper $isOpen={isOpen}>
+      <S.CloseDrawerBtnWrapper $isOpen={isDrawerOpen}>
         <IconButton
           $iconName="ChevronLeft"
           $borderless={false}

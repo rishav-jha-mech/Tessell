@@ -19,8 +19,6 @@ export const DrawerProvider: React.FC<{ children: ReactNode }> = ({
   return (
     <DrawerContext.Provider value={contextValue}>
       <Drawer
-        isOpen={contextValue.isDrawerOpen}
-        toggleDrawer={contextValue.toggleDrawer}
         footerOptions={footerOptions}
         menuOptions={menuOptions}
         dropdown={{
