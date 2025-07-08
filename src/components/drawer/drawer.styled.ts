@@ -27,4 +27,9 @@ export const CloseDrawerBtnWrapper = styled.div<{ $isOpen: boolean }>`
   background-color: ${({ theme }) => theme.colors["surface-0"]};
   transition: transform 0.3s ease-in-out;
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+
+  button {
+    height: ${({ theme }) => theme.spacing.GUTTER * 1.5}px;
+    width: ${({ theme }) => theme.spacing.GUTTER * 1.5}px;
+  }
 `;
