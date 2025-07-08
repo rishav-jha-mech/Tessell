@@ -7,6 +7,7 @@ import { IconButton } from "../icon-button/icon-button";
 import Avatar from "../avatar/avatar";
 import * as S from "./header.styled";
 import FlexView from "../flex-view/flex-view";
+import { GITHUB_LINK } from "../../constants/constants";
 
 /**
  * There is a static part to the header, that doesn't change.
@@ -75,7 +76,12 @@ const Header: React.FC<HeaderProps> = ({
         </FlexView>
       </S.HeaderIconContent>
       <Separator $widthX={1} />
-      <Avatar $size="small" alt="User Avatar" src={userAvatarSrc} />
+      <Avatar
+        $size="small"
+        alt="User Avatar"
+        src={userAvatarSrc}
+        onClick={() => window.open(GITHUB_LINK, "_blank")}
+      />
     </S.HeaderWrapper>
   );
 };
