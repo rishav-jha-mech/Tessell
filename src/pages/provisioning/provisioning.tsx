@@ -10,19 +10,16 @@ import ServiceDetailsSection from "./comps/service-details-section/service-detai
 import StepsSection from "./comps/steps-section/steps-section";
 import * as S from "./provisioning.styled";
 import { useProvisioning } from "./use-provisioning";
+import { ProvisioningProvider } from "./context/provisioning-context";
+import { memo } from "react";
 
-const Provisioning = () => {
+const ProvisioningComp: React.FC = () => {
   const { toggleDrawer } = useDrawerContext();
   const {
     spacing: { GAP },
   } = useTheme();
 
-  const {
-    steps,
-    currentStepIndex,
-    additionalSettingsSectionRef,
-    serviceDetailsSectionRef,
-  } = useProvisioning();
+  const { steps, currentStepIndex } = useProvisioning();
 
   return (
     <S.ContentWrapper>
@@ -61,8 +58,8 @@ const Provisioning = () => {
           <StepsSection steps={steps} currentStepIndex={currentStepIndex} />
         </S.CreateServiceSectionWrapper>
         <FlexView $flex={1} $gap={GAP} $direction="column">
-          <ServiceDetailsSection ref={serviceDetailsSectionRef} />
-          <AdditionalSettingsSection ref={additionalSettingsSectionRef} />
+          <ServiceDetailsSection />
+          <AdditionalSettingsSection />
         </FlexView>
       </S.ContentArea>
       <Separator heightX={2} />
@@ -70,4 +67,10 @@ const Provisioning = () => {
   );
 };
 
-export default Provisioning;
+const ProvisioningPage = () => (
+  <ProvisioningProvider>
+    <ProvisioningComp />
+  </ProvisioningProvider>
+);
+
+export default memo(ProvisioningPage);

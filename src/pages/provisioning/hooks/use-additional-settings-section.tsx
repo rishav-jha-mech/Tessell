@@ -1,18 +1,9 @@
-import {
-  useCallback,
-  useImperativeHandle,
-  useRef,
-  useState,
-  type ChangeEvent,
-} from "react";
-import type { DropdownItemProps } from "../../../../components/dropdown/dropdown-types";
-import { DURATION_OPTIONS } from "./additional-settings-section-constants";
-import type { AdditionalSettingsSectionRef } from "./additional-settings-section-types";
+import { useCallback, useRef, useState, type ChangeEvent } from "react";
 import moment from "moment";
+import { DURATION_OPTIONS } from "../comps/additional-settings-section/additional-settings-section-constants";
+import type { DropdownItemProps } from "../../../components/dropdown/dropdown-types";
 
-const useAdditionalSettingsSection = (
-  ref: React.ForwardedRef<AdditionalSettingsSectionRef>
-) => {
+const useAdditionalSettingsSection = () => {
   const [windowPreference, setWindowPreference] = useState<"none" | "select">(
     "select"
   );
@@ -177,11 +168,6 @@ const useAdditionalSettingsSection = (
     return false;
   }, [validateForm]);
 
-  useImperativeHandle(ref, () => ({
-    submit: handleSubmit,
-    scrollIntoView,
-  }));
-
   return {
     showLoading,
     startDayOptions,
@@ -207,6 +193,7 @@ const useAdditionalSettingsSection = (
     handleSlaChange,
     handleSnapshotTimeChange,
     handleSubmit,
+    scrollIntoView,
   };
 };
 

@@ -1,23 +1,19 @@
-import { forwardRef } from "react";
+import { AppIcons } from "../../../../assets/icons";
 import Alert from "../../../../components/alert/alert";
 import { Checkbox } from "../../../../components/checkbox/checkbox";
 import { Dropdown } from "../../../../components/dropdown/dropdown";
 import FlexView from "../../../../components/flex-view/flex-view";
+import Loader from "../../../../components/loader/loader";
 import { Radio } from "../../../../components/radio/radio";
 import Separator from "../../../../components/separator/separator";
 import TextInput from "../../../../components/text-input/text-input";
 import { Text } from "../../../../components/text/text";
-import TableItem from "./table-item";
-import type { AdditionalSettingsSectionRef } from "./additional-settings-section-types";
-import useAdditionalSettingsSection from "./use-additional-settings-section";
+import { useProvisioningPageContext } from "../../hooks/use-provisioning-context";
 import * as S from "../../provisioning.styled";
-import Loader from "../../../../components/loader/loader";
-import { AppIcons } from "../../../../assets/icons";
+import TableItem from "./table-item";
 
-const AdditionalSettingsSection = forwardRef<
-  AdditionalSettingsSectionRef,
-  unknown
->((_, ref) => {
+const AdditionalSettingsSection = () => {
+  const { additionalSection } = useProvisioningPageContext();
   const {
     containerRef,
     startDayOptions,
@@ -42,7 +38,7 @@ const AdditionalSettingsSection = forwardRef<
     handleAutoMinorUpdateChange,
     handleSlaChange,
     handleSnapshotTimeChange,
-  } = useAdditionalSettingsSection(ref);
+  } = additionalSection;
 
   return (
     <S.ContentContainer ref={containerRef}>
@@ -169,6 +165,7 @@ const AdditionalSettingsSection = forwardRef<
         </FlexView>
         <FlexView $flex={1}>
           <TextInput
+            type="time"
             placeholder="00:00"
             name="snapshotTime"
             $label="Snapshot Time"
@@ -191,6 +188,6 @@ const AdditionalSettingsSection = forwardRef<
       />
     </S.ContentContainer>
   );
-});
+};
 
 export default AdditionalSettingsSection;

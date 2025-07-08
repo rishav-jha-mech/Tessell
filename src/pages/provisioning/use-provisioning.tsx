@@ -1,43 +1,49 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { useTheme } from "styled-components";
+import Swal from "sweetalert2";
 import { AppIcons } from "../../assets/icons";
 import FlexView from "../../components/flex-view/flex-view";
 import Separator from "../../components/separator/separator";
-import { Text } from "../../components/text/text";
-import type { AdditionalSettingsSectionRef } from "./comps/additional-settings-section/additional-settings-section-types";
-import type { ServiceDetailsSectionRef } from "./comps/service-details-section/service-details-section.types";
 import type { StepperItem } from "../../components/stepper/stepper.types";
+import { Text } from "../../components/text/text";
+import { useProvisioningPageContext } from "./hooks/use-provisioning-context";
 
 export const useProvisioning = () => {
-  const serviceDetailsSectionRef = useRef<ServiceDetailsSectionRef>(null);
-  const additionalSettingsSectionRef =
-    useRef<AdditionalSettingsSectionRef>(null);
+  const { serviceSection, additionalSection } = useProvisioningPageContext();
+  const { colors } = useTheme();
 
   const [isLoading, setIsLoading] = useState(false);
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
   const handleServiceSubmit = useCallback(async () => {
-    if (serviceDetailsSectionRef.current) {
-      setIsLoading(true);
-      const res = await serviceDetailsSectionRef.current.submit();
-      if (res) {
-        setCurrentStepIndex(1);
-        additionalSettingsSectionRef.current?.scrollIntoView();
-      }
-      setIsLoading(false);
+    setIsLoading(true);
+    const res = await serviceSection.handleSubmit();
+    if (res) {
+      setCurrentStepIndex(1);
+      serviceSection.scrollIntoView();
     }
-  }, []);
+    setIsLoading(false);
+  }, [serviceSection]);
 
   const handleAdditionalSettingsSubmit = useCallback(async () => {
-    if (additionalSettingsSectionRef.current) {
-      setIsLoading(true);
-      const res = await additionalSettingsSectionRef.current.submit();
-      if (res) {
-        setCurrentStepIndex(2);
-        serviceDetailsSectionRef.current?.scrollIntoView();
-      }
-      setIsLoading(false);
+    setIsLoading(true);
+    const res = await additionalSection.handleSubmit();
+    if (res) {
+      setCurrentStepIndex(2);
+      additionalSection.scrollIntoView();
+      Swal.fire({
+        title: "Service Created",
+        text: "Your Oracle Database Service has been created successfully.",
+        icon: "success",
+        confirmButtonText: "OK",
+        color: colors["primary"],
+        confirmButtonColor: colors["primary-200"],
+        background: colors["surface-100"],
+        backdrop: colors["opacity-modal"],
+      });
     }
-  }, []);
+    setIsLoading(false);
+  }, [additionalSection, colors]);
 
   const steps = useMemo(
     () =>
@@ -120,7 +126,5 @@ export const useProvisioning = () => {
   return {
     steps,
     currentStepIndex,
-    serviceDetailsSectionRef,
-    additionalSettingsSectionRef,
   };
 };

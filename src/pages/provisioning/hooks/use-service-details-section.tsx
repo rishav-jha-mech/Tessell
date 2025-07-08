@@ -1,22 +1,13 @@
-import {
-  useCallback,
-  useImperativeHandle,
-  useRef,
-  useState,
-  type ChangeEvent,
-} from "react";
-import type { DropdownItemProps } from "../../../../components/dropdown/dropdown-types";
+import { useCallback, useRef, useState, type ChangeEvent } from "react";
+import type { TextInputTagRef } from "../../../components/textinput-tag/textinput-tag-types";
 import {
   SOFTWARE_RELEASE_OPTIONS,
   VERSION_OPTIONS,
-} from "./service-details-section-constants";
-import type { TextInputTagRef } from "../../../../components/textinput-tag/textinput-tag-types";
-import type { ServiceDetailsSectionRef } from "./service-details-section.types";
-import type { TextInputProps } from "../../../../components/text-input/text-input-types";
+} from "../comps/service-details-section/service-details-section-constants";
+import type { DropdownItemProps } from "../../../components/dropdown/dropdown-types";
+import type { TextInputProps } from "../../../components/text-input/text-input-types";
 
-const useServiceDetailsSection = (
-  ref: React.ForwardedRef<ServiceDetailsSectionRef>
-) => {
+const useServiceDetailsSection = () => {
   const textInputTagRef = useRef<TextInputTagRef>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -136,11 +127,6 @@ const useServiceDetailsSection = (
     });
   }, [containerRef]);
 
-  useImperativeHandle(ref, () => ({
-    submit: handleSubmit,
-    scrollIntoView,
-  }));
-
   return {
     textInputTagRef,
     containerRef,
@@ -160,6 +146,8 @@ const useServiceDetailsSection = (
     handleChangeTagText,
     handleServiceDescriptionChange,
     handleCreateAsContainerDbChange,
+    handleSubmit,
+    scrollIntoView,
   };
 };
 

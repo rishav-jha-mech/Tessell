@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import FlexView from "../../../../components/flex-view/flex-view";
 import { Table } from "../../../../components/table/table";
 import type {
@@ -51,4 +51,4 @@ const TableItem = () => {
   );
 };
 
-export default TableItem;
+export default memo(TableItem);
