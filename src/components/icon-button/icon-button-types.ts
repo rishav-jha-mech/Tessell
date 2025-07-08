@@ -10,7 +10,6 @@ export interface IconButtonProps
   $borderless?: boolean;
   $variant: keyof ThemeIconButtonType["variants"];
   $size: keyof ThemeIconButtonType["sizes"];
-  $isDisabled?: boolean;
   $rounded?: boolean;
   $ariaLabel: string;
 }

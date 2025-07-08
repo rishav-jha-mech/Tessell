@@ -58,7 +58,8 @@ export const DropdownItemBase = styled(FlexView)<{ $isSelected: boolean }>`
     $isSelected ? theme.colors["primary-200"] : theme.colors["primary"]};
 
   svg {
-    color: ${({ theme }) => theme.colors["subtlest"]};
+    color: ${({ $isSelected, theme }) =>
+      $isSelected ? theme.colors["primary-200"] : theme.colors["primary"]};
   }
 
   &:hover {

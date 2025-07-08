@@ -59,8 +59,8 @@ export const AllIconButtons: Story = {
                 $iconName="Close"
                 $variant={variant}
                 $size="regular"
-                $isDisabled
                 $ariaLabel={`${variant} disabled`}
+                disabled
               />
 
               <Text

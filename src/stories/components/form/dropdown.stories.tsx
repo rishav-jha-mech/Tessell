@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { AppIcons } from "../../../assets/icons";
 import { Dropdown } from "../../../components/dropdown/dropdown";
 import type { DropdownItemProps } from "../../../components/dropdown/dropdown-types";
@@ -16,12 +16,13 @@ export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
 const DropdownStory = () => {
-  const [selected, setSelected] = useState<string | number>("");
+  const [selected, setSelected] = useState<string | number>();
 
-  const options: DropdownItemProps[] = [
+  const [options, setOptions] = useState<DropdownItemProps[]>([
     {
       value: "grape",
       label: "Grape",
+      $isSelected: true,
       $leadingItem: <AppIcons.TessellLogo width={16} />,
       $trailingItem: <AppIcons.CmdE />,
     },
@@ -43,7 +44,18 @@ const DropdownStory = () => {
       $leadingItem: <AppIcons.Chart width={16} />,
       $trailingItem: <AppIcons.CmdE />,
     },
-  ];
+  ]);
+
+  const handleSelect = useCallback((val: string | number) => {
+    setSelected(val);
+    setOptions((prevOptions) =>
+      prevOptions.map((option) =>
+        option.value === val
+          ? { ...option, $isSelected: true }
+          : { ...option, $isSelected: false }
+      )
+    );
+  }, []);
 
   return (
     <FlexView style={{ width: "300px" }} $direction="column" $gap={16}>
@@ -58,7 +70,7 @@ const DropdownStory = () => {
           message: "Select your favorite fruit",
           color: "subtlest",
         }}
-        onChange={(val) => setSelected(val)}
+        onChange={handleSelect}
       />
     </FlexView>
   );

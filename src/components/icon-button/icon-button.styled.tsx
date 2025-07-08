@@ -6,11 +6,11 @@ export const IconButtonBase = styled.button<IconButtonProps>`
     theme,
     $variant,
     $size,
-    disabled,
     $margin,
     $rounded,
     $borderless = true,
     $iconColor,
+    disabled,
   }) => {
     const {
       active,
@@ -19,8 +19,7 @@ export const IconButtonBase = styled.button<IconButtonProps>`
       focus,
       hover,
     } = theme.iconButton.variants[$variant];
-    const { iconSize, buttonRadius } =
-      theme.iconButton.sizes[$size];
+    const { iconSize, buttonRadius } = theme.iconButton.sizes[$size];
 
     return css`
       height: ${iconSize}px;
@@ -30,7 +29,6 @@ export const IconButtonBase = styled.button<IconButtonProps>`
       justify-content: center;
       border-radius: ${$rounded ? "50%" : `${buttonRadius}px`};
       background: transparent;
-      cursor: ${disabled ? "not-allowed" : "pointer"};
       transition: color 0.2s ease;
       border: ${$borderless
         ? "none"
@@ -46,23 +44,27 @@ export const IconButtonBase = styled.button<IconButtonProps>`
         width: ${iconSize}px;
       }
 
-      &:hover {
-        color: ${!disabled && theme.colors[hover.iconColor]};
-      }
+      ${!disabled &&
+      css`
+        &:hover {
+          color: ${theme.colors[hover.iconColor]};
+        }
 
-      &:focus {
-        outline: ${focus.outlineWidth}px solid
-          ${!disabled && theme.colors[focus.outlineColor]};
-        outline-offset: 2px;
-        animation-delay: 70ms;
-        animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
-        animation-duration: 70ms;
-      }
+        &:focus {
+          outline: ${focus.outlineWidth}px solid
+            ${theme.colors[focus.outlineColor]};
+          outline-offset: 2px;
+          animation-delay: 70ms;
+          animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+          animation-duration: 70ms;
+        }
 
-      &:active {
-        color: ${!disabled && theme.colors[active.iconColor]};
-      }
+        &:active {
+          color: ${theme.colors[active.iconColor]};
+        }
+      `}
 
+      cursor: ${disabled ? "not-allowed" : "pointer"};
       pointer-events: ${disabled ? "none" : "auto"};
     `;
   }}
