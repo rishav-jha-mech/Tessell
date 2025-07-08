@@ -25,6 +25,7 @@ export const StyledLabel = styled.label<{ disabled?: boolean }>`
   align-items: center;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
+
 export const StyledBox = styled.span<StyledBoxProps>`
   display: inline-flex;
   align-items: center;
@@ -46,8 +47,6 @@ export const StyledBox = styled.span<StyledBoxProps>`
       variantStateKey = "intermediate";
     } else if ($checked) {
       variantStateKey = "active";
-    } else {
-      variantStateKey = "unchecked";
     }
 
     let interactionKey: keyof typeof states.unchecked = "default";
@@ -67,9 +66,26 @@ export const StyledBox = styled.span<StyledBoxProps>`
       border-color: ${colors[style.borderColor]};
       color: ${style.iconColor ? colors[style.iconColor] : "inherit"};
 
+      position: relative;
+
       svg {
         width: ${sizeConfig.checkIconSize}px;
         height: ${sizeConfig.checkIconSize}px;
+      }
+
+      .checkbox-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .checkbox-icon.check {
+        opacity: ${$checked && !$intermediate ? 1 : 0};
+      }
+
+      .checkbox-icon.minus {
+        opacity: ${$intermediate ? 1 : 0};
       }
 
       ${!disabled &&

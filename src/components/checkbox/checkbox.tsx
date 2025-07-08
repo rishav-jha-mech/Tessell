@@ -30,8 +30,12 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         $intermediate={$indeterminate}
         disabled={$disabled}
       >
-        {$checked === true && <AppIcons.CheckboxCheck />}
-        {$indeterminate && <AppIcons.CheckboxMinus />}
+        <span className="checkbox-icon check">
+          <AppIcons.CheckboxCheck />
+        </span>
+        <span className="checkbox-icon minus">
+          <AppIcons.CheckboxMinus />
+        </span>
       </StyledBox>
       <Separator widthX={0.5} />
       <Text $renderAs="Text-body/primary/primary">{$label}</Text>

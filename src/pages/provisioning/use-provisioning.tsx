@@ -29,7 +29,7 @@ export const useProvisioning = () => {
     setIsLoading(true);
     const res = await additionalSection.handleSubmit();
     if (res) {
-      setCurrentStepIndex(2);
+      setCurrentStepIndex(0);
       additionalSection.scrollIntoView();
       Swal.fire({
         title: "Service Created",

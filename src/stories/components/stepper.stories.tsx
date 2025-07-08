@@ -20,11 +20,10 @@ type Story = StoryObj<typeof Stepper>;
 
 export const Default: Story = {
   args: {
-    currentStepIndex: 1,
+    currentStepIndex: 0,
     steps: [
       {
         label: "Service Details",
-        isCompleted: true,
         children: (
           <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
             <FlexView $gap={6}>
@@ -42,7 +41,6 @@ export const Default: Story = {
       },
       {
         label: "Additional Setting",
-        isCompleted: false,
         children: (
           <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
             <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
@@ -61,17 +59,6 @@ export const Default: Story = {
               </Text>
             </FlexView>
             <Separator height={10} width={1} background="surface-300" />
-          </FlexView>
-        ),
-      },
-      {
-        label: "Review & Submit",
-        isCompleted: false,
-        children: (
-          <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
-            <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-              Time for review, submit and deploy 🚀
-            </Text>
           </FlexView>
         ),
       },
