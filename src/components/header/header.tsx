@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
           />
         </FlexView>
       </S.HeaderIconContent>
-      <Separator widthX={1} />
+      <Separator $widthX={1} />
       <Avatar $size="small" alt="User Avatar" src={userAvatarSrc} />
     </S.HeaderWrapper>
   );

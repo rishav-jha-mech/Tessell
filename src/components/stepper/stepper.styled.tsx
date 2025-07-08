@@ -5,10 +5,10 @@ export const StepperContainer = styled.div`
   flex-direction: column;
 `;
 
-export const StepItem = styled.div<{ isClickable: boolean }>`
+export const StepItem = styled.div<{ $isClickable: boolean }>`
   display: flex;
   align-items: flex-start;
-  cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
+  cursor: ${({ $isClickable }) => ($isClickable ? "pointer" : "default")};
   position: relative;
 `;
 

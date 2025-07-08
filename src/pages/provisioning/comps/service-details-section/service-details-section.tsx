@@ -47,7 +47,7 @@ const ServiceDetailsSection = () => {
       <Text $renderAs="Text-body/primary/primary" $color="subtler">
         Service Name, Service Description, Software Release
       </Text>
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
       <TextInput
         $label="Service Name"
         name="serviceName"
@@ -90,7 +90,7 @@ const ServiceDetailsSection = () => {
         Adjustable parameters, performance optimization, &nbsp;fine-tuning
         options
       </Text>
-      <Separator heightX={1.5} />
+      <Separator $heightX={1.5} />
       <FlexView $gapX={1} $marginBottomX={2} $wrap="wrap">
         <FlexView $flex={1}>
           <Dropdown

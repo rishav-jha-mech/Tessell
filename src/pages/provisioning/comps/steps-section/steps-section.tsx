@@ -62,7 +62,7 @@ const StepsSection: React.FC<StepsSectionProps> = ({
           </Button>
         )}
       </FlexView>
-      <Separator heightX={0.5} />
+      <Separator $heightX={0.5} />
     </FlexView>
   );
 };

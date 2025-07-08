@@ -38,7 +38,7 @@ const Stepper: React.FC<StepperProps> = ({
             }}
           >
             <S.StepItem
-              isClickable={!!onStepChange}
+              $isClickable={!!onStepChange}
               onClick={() => onStepChange?.(index)}
             >
               <S.Dot

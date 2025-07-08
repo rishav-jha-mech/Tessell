@@ -52,15 +52,15 @@ const AdditionalSettingsSection = () => {
       <Text $renderAs="Text-body/primary/primary" $color="subtler">
         Maintenance Window, Availability machine
       </Text>
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
       <Text $renderAs="heading/secondary">Maintenance Window</Text>
       <Separator height={2} />
       <Text $renderAs="Text-body/secondary/secondary" $color="subtlest">
         Describing what maintenance window is
       </Text>
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
       <Text $renderAs="heading/form titles">Window Preference</Text>
-      <Separator heightX={0.5} />
+      <Separator $heightX={0.5} />
       <FlexView $gapX={1} $marginBottomX={1.5}>
         <Radio
           $label="No Preferences"
@@ -137,17 +137,17 @@ const AdditionalSettingsSection = () => {
         $checked={autoMinorUpdate}
         onChange={handleAutoMinorUpdateChange}
       />
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
       <Text $renderAs="heading/secondary">
         Availability Machine Preferences
       </Text>
-      <Separator heightX={0.25} />
+      <Separator $heightX={0.25} />
       <Text $renderAs="Text-body/secondary/secondary" $color="subtlest">
         Here you can define your data protection SLA and schedule. Once the
         database has been created, you can further define the data availability
         and access policies from the Availability Machine app.
       </Text>
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
       <FlexView $gapX={1} $marginBottomX={2} $wrap="wrap">
         <FlexView $flex={1}>
           <TextInput
@@ -180,7 +180,7 @@ const AdditionalSettingsSection = () => {
         </FlexView>
       </FlexView>
       <TableItem />
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
       <Alert
         theme="info"
         message="Projecting an estimate total count of 71 snapshots with the above configuration."

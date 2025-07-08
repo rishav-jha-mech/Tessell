@@ -37,7 +37,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
           <AppIcons.CheckboxMinus />
         </span>
       </StyledBox>
-      <Separator widthX={0.5} />
+      <Separator $widthX={0.5} />
       <Text $renderAs="Text-body/primary/primary">{$label}</Text>
     </StyledLabel>
   );

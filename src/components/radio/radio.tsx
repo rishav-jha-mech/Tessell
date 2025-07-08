@@ -27,7 +27,7 @@ export const Radio: React.FC<RadioProps> = ({
       >
         {$checked && <div className="dot" />}
       </StyledRadioInput>
-      <Separator widthX={0.5} />
+      <Separator $widthX={0.5} />
       <Text $renderAs="Text-body/primary/primary">{$label}</Text>
     </StyledLabel>
   );

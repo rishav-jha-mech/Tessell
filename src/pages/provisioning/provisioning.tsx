@@ -52,7 +52,7 @@ const ProvisioningComp: React.FC = () => {
         }
         onDismiss={toggleDrawer}
       />
-      <Separator heightX={1.5} />
+      <Separator $heightX={1.5} />
       <S.ContentArea>
         <S.CreateServiceSectionWrapper>
           <StepsSection steps={steps} currentStepIndex={currentStepIndex} />
@@ -62,7 +62,7 @@ const ProvisioningComp: React.FC = () => {
           <AdditionalSettingsSection />
         </FlexView>
       </S.ContentArea>
-      <Separator heightX={2} />
+      <Separator $heightX={2} />
     </S.ContentWrapper>
   );
 };
