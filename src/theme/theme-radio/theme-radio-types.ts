@@ -1,29 +1,34 @@
 import type { ColorKeys } from "../theme-colors/theme-colors";
 
-interface ThemeRadioState {
-  background: ColorKeys;
-  border: ColorKeys;
-  dot: ColorKeys;
+export interface RadioStateTokens {
+  backgroundColor: ColorKeys;
+  borderColor: ColorKeys;
+  dotColor?: ColorKeys;
 }
 
-interface ThemeRadioVariantStates {
-  default: ThemeRadioState;
-  hover: ThemeRadioState;
-  active: ThemeRadioState;
-  disabled: ThemeRadioState;
+export interface RadioInteractionStates {
+  default: RadioStateTokens;
+  hover: RadioStateTokens;
+  active: RadioStateTokens;
+  disabled: RadioStateTokens;
 }
 
-interface ThemeRadioSizes {
+export interface RadioVariantStates {
+  selected: RadioInteractionStates;
+  unselected: RadioInteractionStates;
+}
+
+export interface RadioSizeTokens {
   size: number;
   dotSize: number;
 }
 
 export interface ThemeRadioType {
   variants: {
-    primary: ThemeRadioVariantStates;
+    primary: RadioVariantStates;
   };
   sizes: {
-    regular: ThemeRadioSizes;
-    large: ThemeRadioSizes;
+    regular: RadioSizeTokens;
+    large: RadioSizeTokens;
   };
 }

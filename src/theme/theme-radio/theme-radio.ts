@@ -3,25 +3,44 @@ import type { ThemeRadioType } from "./theme-radio-types";
 export const ThemeRadio: ThemeRadioType = {
   variants: {
     primary: {
-      default: {
-        background: "opacity-transparent",
-        border: "border-radio",
-        dot: "primary-200",
+      unselected: {
+        default: {
+          backgroundColor: "surface-0",
+          borderColor: "border-bold",
+        },
+        hover: {
+          backgroundColor: "secondary-0",
+          borderColor: "primary-200",
+        },
+        active: {
+          backgroundColor: "surface-0",
+          borderColor: "primary-200",
+        },
+        disabled: {
+          backgroundColor: "surface-secondary",
+          borderColor: "subtlest",
+        },
       },
-      hover: {
-        background: "opacity-transparent",
-        border: "primary-200",
-        dot: "primary-200",
-      },
-      active: {
-        background: "opacity-transparent",
-        border: "primary-300",
-        dot: "primary-300",
-      },
-      disabled: {
-        background: "surface-secondary",
-        border: "border-disabled",
-        dot: "inverse",
+      selected: {
+        default: {
+          backgroundColor: "surface-0",
+          borderColor: "primary-200",
+          dotColor: "primary-200",
+        },
+        hover: {
+          backgroundColor: "surface-0",
+          borderColor: "primary-300",
+          dotColor: "primary-300",
+        },
+        active: {
+          backgroundColor: "surface-0",
+          borderColor: "primary-200",
+        },
+        disabled: {
+          backgroundColor: "surface-secondary",
+          borderColor: "subtlest",
+          dotColor: "inverse",
+        },
       },
     },
   },

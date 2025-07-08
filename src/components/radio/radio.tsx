@@ -1,8 +1,8 @@
 import React from "react";
-import { HiddenRadio, StyledLabel, StyledRadio } from "./radio-styled";
-import type { RadioProps } from "./radio-types";
-import { Text } from "../text/text";
 import Separator from "../separator/separator";
+import { Text } from "../text/text";
+import { HiddenRadio, StyledLabel, StyledRadioInput } from "./radio-styled";
+import type { RadioProps } from "./radio-types";
 
 export const Radio: React.FC<RadioProps> = ({
   $label,
@@ -13,19 +13,20 @@ export const Radio: React.FC<RadioProps> = ({
   ...props
 }) => {
   return (
-    <StyledLabel disabled={disabled}>
+    <StyledLabel>
       <HiddenRadio
-        type="radio"
         checked={$checked}
+        onChange={props.onChange}
         disabled={disabled}
-        {...props}
       />
-      <StyledRadio
+      <StyledRadioInput
         $variant={$variant}
         $size={$size}
         $checked={$checked}
         disabled={disabled}
-      />
+      >
+        {$checked && <div className="dot" />}
+      </StyledRadioInput>
       <Separator widthX={0.5} />
       <Text $renderAs="Text-body/primary/primary">{$label}</Text>
     </StyledLabel>
