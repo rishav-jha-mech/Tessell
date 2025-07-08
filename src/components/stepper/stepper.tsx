@@ -4,7 +4,11 @@ import type { StepperProps, StepperItem } from "./stepper.types";
 import { Text } from "../text/text";
 import Separator from "../separator/separator";
 
-const Stepper: React.FC<StepperProps> = ({ onStepChange, steps }) => {
+const Stepper: React.FC<StepperProps> = ({
+  onStepChange,
+  steps,
+  currentStepIndex,
+}) => {
   const [heights, setHeights] = useState<number[]>([]);
 
   const refs = useRef<(HTMLDivElement | null)[]>([]);
@@ -20,6 +24,12 @@ const Stepper: React.FC<StepperProps> = ({ onStepChange, steps }) => {
         const isLast = index === steps.length - 1;
         const contentHeight = heights[index] || 0;
 
+        // Mark step as completed if it's before or equal to current step
+        const isCompleted = index <= currentStepIndex;
+
+        // The line below should be completed if the next step is also completed
+        const isLineCompleted = index + 1 <= currentStepIndex;
+
         return (
           <div
             key={index}
@@ -29,17 +39,18 @@ const Stepper: React.FC<StepperProps> = ({ onStepChange, steps }) => {
           >
             <S.StepItem
               isClickable={!!onStepChange}
-              onClick={() => onStepChange(index)}
+              onClick={() => onStepChange?.(index)}
             >
               <S.Dot
-                $isCompleted={step.isCompleted}
+                $isLineCompleted={isLineCompleted}
+                $isCompleted={isCompleted}
                 $isFirst={index === 0}
                 $isLast={isLast}
                 $lineHeight={isLast ? 0 : contentHeight}
               />
               <Text
                 $renderAs="bodySecondary"
-                $color={step.isCompleted ? "primary-200" : "primary"}
+                $color={isCompleted ? "primary-200" : "primary"}
               >
                 {step.label}
               </Text>

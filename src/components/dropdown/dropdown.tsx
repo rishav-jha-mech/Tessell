@@ -13,6 +13,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   $helpText,
   $size,
   $isDisabled = false,
+  $trailingItem,
   onChange,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,9 +50,13 @@ export const Dropdown: React.FC<DropdownProps> = ({
         $cursor="pointer"
         $helpText={$helpText}
         $trailingItem={
-          <S.Caret $isOpen={isOpen}>
-            <AppIcons.ChevronDown height={16} width={16} />
-          </S.Caret>
+          $trailingItem ? (
+            $trailingItem
+          ) : (
+            <S.Caret $isOpen={isOpen}>
+              <AppIcons.ChevronDown height={16} width={16} />
+            </S.Caret>
+          )
         }
         onClick={() => !$isDisabled && setIsOpen(!isOpen)}
       />

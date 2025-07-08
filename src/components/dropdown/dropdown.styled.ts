@@ -38,7 +38,7 @@ export const OptionsList = styled.ul<{
         case "small":
           return helpTextPresent ? "72px" : "36px";
         case "default":
-          return helpTextPresent ? "110px" : "55px";
+          return helpTextPresent ? "72px" : "55px";
         default:
           return "0";
       }

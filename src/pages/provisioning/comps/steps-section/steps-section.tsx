@@ -1,67 +1,26 @@
 import { useTheme } from "styled-components";
-import { AppIcons } from "../../../../assets/icons";
+import { Button } from "../../../../components/button/button";
 import FlexView from "../../../../components/flex-view/flex-view";
 import Separator from "../../../../components/separator/separator";
 import Stepper from "../../../../components/stepper/stepper";
 import { Text } from "../../../../components/text/text";
-import * as S from "./steps-section.styled";
-import { Button } from "../../../../components/button/button";
 import type { StepsSectionProps } from "./steps-section-types";
+import * as S from "./steps-section.styled";
 
-const StepsSection: React.FC<StepsSectionProps> = ({ button }) => {
-  const steps = [
-    {
-      label: "Service Details",
-      isCompleted: true,
-      children: (
-        <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
-          <FlexView $gap={6}>
-            <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-              Oracle_service
-            </Text>
-            <AppIcons.OracleLogo />
-          </FlexView>
-          <Separator height={10} width={1} background="surface-300" />
-          <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-            oracle_para_profile
-          </Text>
-        </FlexView>
-      ),
-    },
-    {
-      label: "Additional Setting",
-      isCompleted: false,
-      children: (
-        <FlexView $direction="row" $alignItems="center" $wrap="wrap" $gap={6}>
-          <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-            No Preference
-          </Text>
-          <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-            Enabled minor version update
-          </Text>
-          <Separator height={10} width={0.5} background="surface-300" />
-          <FlexView $gap={6}>
-            <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-              7-day PITR
-            </Text>
-            <Text $renderAs="Text-body/secondary/secondary" $color="subtler">
-              01:00 snapshot time
-            </Text>
-          </FlexView>
-          <Separator height={10} width={0.5} background="surface-300" />
-        </FlexView>
-      ),
-    },
-  ];
-
+const StepsSection: React.FC<StepsSectionProps> = ({
+  currentStepIndex,
+  steps,
+}) => {
   const {
     spacing: { GUTTER },
   } = useTheme();
 
+  const { button } = steps[currentStepIndex] || {};
+
   return (
     <FlexView $direction="column">
       <S.Container>
-        <Stepper currentStepIndex={1} steps={steps} onStepChange={() => {}} />
+        <Stepper currentStepIndex={currentStepIndex} steps={steps} />
       </S.Container>
       <FlexView
         $direction="column"
@@ -88,18 +47,20 @@ const StepsSection: React.FC<StepsSectionProps> = ({ button }) => {
             $99.99
           </Text>
         </FlexView>
-        <Button
-          $icon={button.icon}
-          $size="large"
-          $type="primary"
-          $isFullWidth
-          onClick={button.onClick}
-          $isLoading={button.isLoading}
-        >
-          <Text $renderAs="button/large" $color="surface-0">
-            Create Service
-          </Text>
-        </Button>
+        {button && (
+          <Button
+            $icon={button.icon}
+            $size="large"
+            $type="primary"
+            $isFullWidth
+            onClick={button.onClick}
+            $isLoading={button.isLoading}
+          >
+            <Text $renderAs="button/large" $color="surface-0">
+              {button.label}
+            </Text>
+          </Button>
+        )}
       </FlexView>
       <Separator heightX={0.5} />
     </FlexView>

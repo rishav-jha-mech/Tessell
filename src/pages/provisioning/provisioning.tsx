@@ -5,10 +5,10 @@ import HeaderTitle from "../../components/header-title/header-title";
 import Header from "../../components/header/header";
 import Separator from "../../components/separator/separator";
 import { useDrawerContext } from "../../context/drawer-context/use-drawer-context";
-import * as S from "./provisioning.styled";
-import StepsSection from "./comps/steps-section/steps-section";
-import ServiceDetailsSection from "./comps/service-details-section/service-details-section";
 import AdditionalSettingsSection from "./comps/additional-settings-section/additional-settings-section";
+import ServiceDetailsSection from "./comps/service-details-section/service-details-section";
+import StepsSection from "./comps/steps-section/steps-section";
+import * as S from "./provisioning.styled";
 import { useProvisioning } from "./use-provisioning";
 
 const Provisioning = () => {
@@ -17,7 +17,12 @@ const Provisioning = () => {
     spacing: { GAP },
   } = useTheme();
 
-  const { serviceDetailsSectionRef } = useProvisioning();
+  const {
+    steps,
+    currentStepIndex,
+    additionalSettingsSectionRef,
+    serviceDetailsSectionRef,
+  } = useProvisioning();
 
   return (
     <S.ContentWrapper>
@@ -53,21 +58,11 @@ const Provisioning = () => {
       <Separator heightX={1.5} />
       <S.ContentArea>
         <S.CreateServiceSectionWrapper>
-          <StepsSection
-            button={{
-              icon: "Add",
-              label: "Create Service",
-              isLoading: false,
-              onClick: () => serviceDetailsSectionRef.current?.submit(),
-            }}
-          />
+          <StepsSection steps={steps} currentStepIndex={currentStepIndex} />
         </S.CreateServiceSectionWrapper>
         <FlexView $flex={1} $gap={GAP} $direction="column">
           <ServiceDetailsSection ref={serviceDetailsSectionRef} />
-
-          <S.ContentContainer>
-            <AdditionalSettingsSection />
-          </S.ContentContainer>
+          <AdditionalSettingsSection ref={additionalSettingsSectionRef} />
         </FlexView>
       </S.ContentArea>
       <Separator heightX={2} />

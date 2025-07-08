@@ -10,13 +10,14 @@ import TextinputTag from "../../../../components/textinput-tag/textinput-tag";
 import useServiceDetailsSection from "./use-service-details-section";
 import { forwardRef } from "react";
 import type { ServiceDetailsSectionRef } from "./service-details-section.types";
-import * as S from "./service-details-section.styled";
+import * as S from "../../provisioning.styled";
 import Loader from "../../../../components/loader/loader";
 
 const ServiceDetailsSection = forwardRef<ServiceDetailsSectionRef, unknown>(
   (_, ref) => {
     const { colors } = useTheme();
     const {
+      containerRef,
       showLoading,
       helpTextTags,
       textInputTagRef,
@@ -37,7 +38,7 @@ const ServiceDetailsSection = forwardRef<ServiceDetailsSectionRef, unknown>(
     } = useServiceDetailsSection(ref);
 
     return (
-      <S.Wrapper>
+      <S.ContentContainer ref={containerRef}>
         {showLoading && (
           <S.LoadingOverlay>
             <Loader />
@@ -122,7 +123,7 @@ const ServiceDetailsSection = forwardRef<ServiceDetailsSectionRef, unknown>(
           $checked={createAsContainerDb}
           onChange={handleCreateAsContainerDbChange}
         />
-      </S.Wrapper>
+      </S.ContentContainer>
     );
   }
 );

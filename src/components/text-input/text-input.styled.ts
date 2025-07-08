@@ -145,20 +145,6 @@ export const TextInputBase = styled.input<TextInputProps>`
       }
 
       transition: all 0.2s ease;
-
-      &[type="date"],
-      &[type="time"] {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        position: relative;
-      }
-
-      &[type="date"]::-webkit-calendar-picker-indicator,
-      &[type="time"]::-webkit-calendar-picker-indicator {
-        display: none;
-        -webkit-appearance: none;
-      }
     `;
   }}
 `;

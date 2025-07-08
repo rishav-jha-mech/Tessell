@@ -17,6 +17,7 @@ export const Dot = styled.div<{
   $isLast: boolean;
   $isFirst: boolean;
   $lineHeight: number;
+  $isLineCompleted: boolean;
 }>`
   position: relative;
   width: 5px;
@@ -38,7 +39,10 @@ export const Dot = styled.div<{
     width: 1px;
     transform: translateX(-50%);
     height: ${({ $lineHeight }) => `${$lineHeight - 2.5}px`};
-    background-color: ${({ theme }) => theme.colors["surface-200"]};
+    background-color: ${({ theme, $isLineCompleted }) =>
+      $isLineCompleted
+        ? theme.colors["primary-200"]
+        : theme.colors["surface-200"]};
     display: ${({ $isLast }) => ($isLast ? "none" : "block")};
   }
 `;

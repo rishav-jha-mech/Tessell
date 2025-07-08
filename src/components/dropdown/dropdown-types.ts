@@ -17,5 +17,6 @@ export interface DropdownProps {
   $value: string | number | undefined;
   $helpText?: TextInputProps["$helpText"];
   onChange: (value: string | number) => void;
+  $trailingItem?: React.ReactNode;
 }
 

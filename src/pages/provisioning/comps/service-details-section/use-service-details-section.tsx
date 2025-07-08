@@ -18,6 +18,7 @@ const useServiceDetailsSection = (
   ref: React.ForwardedRef<ServiceDetailsSectionRef>
 ) => {
   const textInputTagRef = useRef<TextInputTagRef>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const [showLoading, setShowLoading] = useState<boolean>(false);
 
@@ -113,27 +114,36 @@ const useServiceDetailsSection = (
   const handleSubmit = useCallback(async () => {
     if (validateForm()) {
       setShowLoading(true);
-      const timer = setTimeout(() => {
-        clearTimeout(timer);
-        setShowLoading(false);
-        setServiceNameMessage("");
-        setServiceDescription("");
-        textInputTagRef.current?.clear();
-        setSelectedSoftwareRelease(SOFTWARE_RELEASE_OPTIONS[0].value);
-        setSelectedVersion(VERSION_OPTIONS[0].value);
-        setSoftwareReleaseOptions(SOFTWARE_RELEASE_OPTIONS);
-        setVersionOptions(VERSION_OPTIONS);
-        setCreateAsContainerDb(false);
-      }, 3000);
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+      setShowLoading(false);
+      setServiceNameMessage("");
+      setServiceDescription("");
+      textInputTagRef.current?.clear();
+      setSelectedSoftwareRelease(SOFTWARE_RELEASE_OPTIONS[0].value);
+      setSelectedVersion(VERSION_OPTIONS[0].value);
+      setSoftwareReleaseOptions(SOFTWARE_RELEASE_OPTIONS);
+      setVersionOptions(VERSION_OPTIONS);
+      setCreateAsContainerDb(false);
+      return true;
     }
+    return false;
   }, [validateForm]);
+
+  const scrollIntoView = useCallback(() => {
+    containerRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, [containerRef]);
 
   useImperativeHandle(ref, () => ({
     submit: handleSubmit,
+    scrollIntoView,
   }));
 
   return {
     textInputTagRef,
+    containerRef,
     serviceName,
     serviceNameMessage,
     serviceDescription,

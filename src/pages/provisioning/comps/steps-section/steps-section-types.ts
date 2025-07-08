@@ -1,10 +1,6 @@
-import type { AppIconKeys } from "../../../../assets/icons";
+import type { StepperItem } from "../../../../components/stepper/stepper.types";
 
 export interface StepsSectionProps {
-  button: {
-    icon: AppIconKeys;
-    label: string;
-    isLoading: boolean;
-    onClick: () => void;
-  };
+  currentStepIndex: number;
+  steps: StepperItem[];
 }

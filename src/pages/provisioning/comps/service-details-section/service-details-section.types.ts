@@ -1,3 +1,4 @@
 export interface ServiceDetailsSectionRef {
-  submit: () => void;
+  submit: () => Promise<boolean>; // True if resolved, false if any error
+  scrollIntoView: () => void;
 }
