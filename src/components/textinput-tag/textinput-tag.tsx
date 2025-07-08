@@ -60,13 +60,14 @@ const TextinputTag: React.FC<TextInputTagProps> = ({
         $maxWidth={maxWidth}
         $size="default"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+          if (error) {
+            setError("");
+          }
+        }}
         onKeyDown={handleKeyDown}
-        $helpText={
-          error
-            ? { message: error, color: "danger-400" }
-            : undefined
-        }
+        $helpText={error ? { message: error, color: "danger-400" } : undefined}
         autoComplete="off"
       />
 
