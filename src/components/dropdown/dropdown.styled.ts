@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Text } from "../text/text";
 import FlexView from "../flex-view/flex-view";
+import type { DropdownProps } from "./dropdown-types";
 
 export const DropdownWrapper = styled.div<{ $disabled?: boolean }>`
   position: relative;
@@ -17,16 +18,35 @@ export const Caret = styled.div<{ $isOpen: boolean }>`
   transition: transform 0.2s ease;
 `;
 
-export const OptionsList = styled.ul<{ helpTextPresent: boolean }>`
+export const OptionsList = styled.ul<{
+  helpTextPresent: boolean;
+  $size: DropdownProps["$size"];
+}>`
   position: absolute;
   background-color: ${({ theme }) => theme.colors["inverse"]};
-  top: ${({ helpTextPresent }) => (helpTextPresent ? "72px" : "36px")};
   left: 0;
   right: 0;
-  padding: 0 0;
+  padding: 0;
   border-radius: 4px;
   z-index: 10;
   list-style: none;
+  box-shadow: 0 0 8px ${({ theme }) => theme.colors["surface-200"]};
+
+  ${({ helpTextPresent, $size }) => {
+    const getTopOffset = () => {
+      switch ($size) {
+        case "small":
+          return helpTextPresent ? "72px" : "36px";
+        case "default":
+          return helpTextPresent ? "110px" : "55px";
+        default:
+          return "0";
+      }
+    };
+    return css`
+      top: ${getTopOffset()};
+    `;
+  }}
 `;
 
 export const DropdownItemBase = styled(FlexView)<{ $isSelected: boolean }>`
@@ -42,7 +62,8 @@ export const DropdownItemBase = styled(FlexView)<{ $isSelected: boolean }>`
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors["primary-200"]};
+    color: ${({ theme, $isSelected }) =>
+      theme.colors[$isSelected ? "primary-300" : "primary-200"]};
     background-color: ${({ theme }) => theme.colors["secondary-0"]};
   }
   &:hover svg {

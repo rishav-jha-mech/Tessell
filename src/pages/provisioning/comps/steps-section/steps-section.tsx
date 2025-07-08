@@ -6,8 +6,9 @@ import Stepper from "../../../../components/stepper/stepper";
 import { Text } from "../../../../components/text/text";
 import * as S from "./steps-section.styled";
 import { Button } from "../../../../components/button/button";
+import type { StepsSectionProps } from "./steps-section-types";
 
-const StepsSection = () => {
+const StepsSection: React.FC<StepsSectionProps> = ({ button }) => {
   const steps = [
     {
       label: "Service Details",
@@ -87,7 +88,14 @@ const StepsSection = () => {
             $99.99
           </Text>
         </FlexView>
-        <Button $icon="Add" $size="large" $type="primary" $isFullWidth>
+        <Button
+          $icon={button.icon}
+          $size="large"
+          $type="primary"
+          $isFullWidth
+          onClick={button.onClick}
+          $isLoading={button.isLoading}
+        >
           <Text $renderAs="button/large" $color="surface-0">
             Create Service
           </Text>

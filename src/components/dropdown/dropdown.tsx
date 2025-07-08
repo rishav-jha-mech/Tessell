@@ -57,7 +57,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
       />
 
       {isOpen && (
-        <S.OptionsList helpTextPresent={!!$helpText}>
+        <S.OptionsList $size={$size} helpTextPresent={!!$helpText}>
           {$options.map((opt) => (
             <DropdownItem
               key={opt.value}

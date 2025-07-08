@@ -9,12 +9,15 @@ import * as S from "./provisioning.styled";
 import StepsSection from "./comps/steps-section/steps-section";
 import ServiceDetailsSection from "./comps/service-details-section/service-details-section";
 import AdditionalSettingsSection from "./comps/additional-settings-section/additional-settings-section";
+import { useProvisioning } from "./use-provisioning";
 
 const Provisioning = () => {
   const { toggleDrawer } = useDrawerContext();
   const {
     spacing: { GAP },
   } = useTheme();
+
+  const { serviceDetailsSectionRef } = useProvisioning();
 
   return (
     <S.ContentWrapper>
@@ -50,12 +53,18 @@ const Provisioning = () => {
       <Separator heightX={1.5} />
       <S.ContentArea>
         <S.CreateServiceSectionWrapper>
-          <StepsSection />
+          <StepsSection
+            button={{
+              icon: "Add",
+              label: "Create Service",
+              isLoading: false,
+              onClick: () => serviceDetailsSectionRef.current?.submit(),
+            }}
+          />
         </S.CreateServiceSectionWrapper>
         <FlexView $flex={1} $gap={GAP} $direction="column">
-          <S.ContentContainer>
-            <ServiceDetailsSection />
-          </S.ContentContainer>
+          <ServiceDetailsSection ref={serviceDetailsSectionRef} />
+
           <S.ContentContainer>
             <AdditionalSettingsSection />
           </S.ContentContainer>
