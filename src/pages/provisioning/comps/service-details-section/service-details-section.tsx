@@ -6,6 +6,7 @@ import { Text } from "../../../../components/text/text";
 import FlexView from "../../../../components/flex-view/flex-view";
 import { Dropdown } from "../../../../components/dropdown/dropdown";
 import { Checkbox } from "../../../../components/checkbox/checkbox";
+import TextinputTag from "../../../../components/textinput-tag/textinput-tag";
 
 const ServiceDetailsSection = () => {
   const { colors } = useTheme();
@@ -34,12 +35,12 @@ const ServiceDetailsSection = () => {
         $multiline={true}
         $marginBottomX={1.5}
       />
-      <TextInput
-        $label="Tags"
+      <TextinputTag
+        label="Tags"
         name="tags"
-        placeholder="Key:Value"
-        $maxWidth={"300px"}
-        $marginBottomX={2}
+        placeholder="Key                              : Value"
+        maxWidth={"300px"}
+        marginBottomX={2}
       />
       <Text $renderAs="Heading/3">Engine Configuration</Text>
       <Separator height={2} />

@@ -4,8 +4,6 @@ import Drawer from "../../components/drawer/drawer";
 import type { DrawerBtnProps } from "../../components/drawer/drawer-types";
 import type { DropdownItemProps } from "../../components/dropdown/dropdown-types";
 import FlexView from "../../components/flex-view/flex-view";
-import { Text } from "../../components/text/text";
-import { useTheme } from "styled-components";
 
 const meta: Meta<typeof Drawer> = {
   title: "Components/Drawer",
@@ -23,10 +21,6 @@ type Story = StoryObj<typeof Drawer>;
 const DrawerStory = () => {
   const [selectedOption, setSelectedOption] = useState("dbservices");
   const [drawerOpen, setDrawerOpen] = useState(true);
-
-  const {
-    spacing: { PAGE_PADDING },
-  } = useTheme();
 
   const handleToggleDrawer = useCallback(() => {
     setDrawerOpen((prev) => !prev);
@@ -105,23 +99,6 @@ const DrawerStory = () => {
         menuOptions={menuOptions}
         footerOptions={footerOptions}
       />
-      <FlexView
-        $flex={1}
-        $gap={PAGE_PADDING}
-        $direction="column"
-        $paddingHorizontal={PAGE_PADDING}
-        $paddingVertical={PAGE_PADDING}
-      >
-        <Text $renderAs="headingLg" $color="inherit">
-          Drawer Component
-        </Text>
-        <Text $renderAs="headingLg" $color="inherit">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores
-          blanditiis nihil delectus velit corrupti numquam odit! Temporibus
-          quasi ad animi libero. Perferendis quidem ab non suscipit fugit
-          reiciendis corrupti sequi.
-        </Text>
-      </FlexView>
     </FlexView>
   );
 };

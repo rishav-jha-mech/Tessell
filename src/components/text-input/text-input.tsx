@@ -31,7 +31,11 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>((props, ref) => {
       $disabled={$isDisabled}
       $focused={focused}
     >
-      {$label && <Text $renderAs="headingForm">{$label}</Text>}
+      {$label && (
+        <Text $renderAs="headingForm" $userSelect="none">
+          {$label}
+        </Text>
+      )}
       <Separator height={8} />
 
       <S.TextInputBaseWrapper $height={height} $multiline={$multiline}>

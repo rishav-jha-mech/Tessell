@@ -19,12 +19,12 @@ export const IconButtonBase = styled.button<IconButtonProps>`
       focus,
       hover,
     } = theme.iconButton.variants[$variant];
-    const { iconSize, buttonSize, buttonRadius } =
+    const { iconSize, buttonRadius } =
       theme.iconButton.sizes[$size];
 
     return css`
-      height: ${buttonSize}px;
-      width: ${buttonSize}px;
+      height: ${iconSize}px;
+      width: ${iconSize}px;
       display: flex;
       align-items: center;
       justify-content: center;
