@@ -30,6 +30,7 @@ const AllTextInputsComp = () => {
             $label="Input with help text"
             placeholder="Default input"
             $size={size as keyof typeof textInput.sizes}
+            $marginBottomX={2}
           />
 
           <TextInput
@@ -38,6 +39,7 @@ const AllTextInputsComp = () => {
             $leadingItem={<AppIcons.TessellLogo />}
             $trailingItem={<AppIcons.Close />}
             $size={size as keyof typeof textInput.sizes}
+            $marginBottomX={2}
           />
 
           <TextInput
@@ -48,6 +50,7 @@ const AllTextInputsComp = () => {
               color: "danger-400",
             }}
             $size={size as keyof typeof textInput.sizes}
+            $marginBottomX={2}
           />
 
           <TextInput
@@ -55,6 +58,7 @@ const AllTextInputsComp = () => {
             placeholder="Selected input"
             $isSelected
             $size={size as keyof typeof textInput.sizes}
+            $marginBottomX={2}
           />
 
           <TextInput
@@ -62,6 +66,7 @@ const AllTextInputsComp = () => {
             placeholder="Disabled input"
             $isDisabled
             $size={size as keyof typeof textInput.sizes}
+            $marginBottomX={2}
           />
         </FlexView>
       ))}
