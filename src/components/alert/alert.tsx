@@ -43,7 +43,6 @@ const Alert: React.FC<AlertProps> = ({
       $alignItems="center"
       $paddingVertical={8}
       $paddingHorizontal={8}
-      width={'100%'}
     >
       {Icon && <Icon color={iconColor} height={20} width={20} />}
       <FlexView $flex={1}>

@@ -31,14 +31,15 @@ export const CreateServiceSectionWrapper = styled.div`
   }
 `;
 
-export const ContentContainer = styled.div`
+export const ContentContainer = styled.div<{ $paddingRightX: number }>`
   position: relative;
   background-color: ${({ theme }) => theme.colors["surface-0"]};
   border-radius: 4px;
   padding-top: ${({ theme }) => theme.spacing.GUTTER}px;
   padding-bottom: ${({ theme }) => theme.spacing.GUTTER}px;
   padding-left: ${({ theme }) => theme.spacing.GUTTER}px;
-  padding-right: ${({ theme }) => theme.spacing.GUTTER * 1.75}px;
+  padding-right: ${({ theme, $paddingRightX }) =>
+    theme.spacing.GUTTER * $paddingRightX}px;
 `;
 
 export const LoadingOverlay = styled.div`

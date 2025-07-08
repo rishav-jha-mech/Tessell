@@ -41,7 +41,7 @@ const AdditionalSettingsSection = () => {
   } = additionalSection;
 
   return (
-    <S.ContentContainer ref={containerRef}>
+    <S.ContentContainer ref={containerRef} $paddingRightX={1}>
       {showLoading && (
         <S.LoadingOverlay>
           <Loader />

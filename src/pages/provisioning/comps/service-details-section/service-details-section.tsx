@@ -36,7 +36,7 @@ const ServiceDetailsSection = () => {
   } = serviceSection;
 
   return (
-    <S.ContentContainer ref={containerRef}>
+    <S.ContentContainer ref={containerRef} $paddingRightX={1.75}>
       {showLoading && (
         <S.LoadingOverlay>
           <Loader />
